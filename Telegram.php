@@ -1160,9 +1160,7 @@ class Telegram
             'resize_keyboard'   => $resize,
             'selective'         => $selective,
         ];
-        $encodedMarkup = json_encode($replyMarkup, true);
-
-        return $encodedMarkup;
+        return json_encode($replyMarkup, true);
     }
 
     /// Set an InlineKeyBoard
@@ -1176,9 +1174,7 @@ class Telegram
         $replyMarkup = [
             'inline_keyboard' => $options,
         ];
-        $encodedMarkup = json_encode($replyMarkup, true);
-
-        return $encodedMarkup;
+        return json_encode($replyMarkup, true);
     }
 
     /// Create an InlineKeyboardButton
@@ -1232,13 +1228,11 @@ class Telegram
      */
     public function buildKeyboardButton($text, $request_contact = false, $request_location = false)
     {
-        $replyMarkup = [
+        return [
             'text'             => $text,
             'request_contact'  => $request_contact,
             'request_location' => $request_location,
         ];
-
-        return $replyMarkup;
     }
 
     /// Hide a custom keyboard
@@ -1253,9 +1247,7 @@ class Telegram
             'remove_keyboard' => true,
             'selective'       => $selective,
         ];
-        $encodedMarkup = json_encode($replyMarkup, true);
-
-        return $encodedMarkup;
+        return json_encode($replyMarkup, true);
     }
 
     /// Display a reply interface to the user
@@ -1269,9 +1261,7 @@ class Telegram
             'force_reply' => true,
             'selective'   => $selective,
         ];
-        $encodedMarkup = json_encode($replyMarkup, true);
-
-        return $encodedMarkup;
+        return json_encode($replyMarkup, true);
     }
 
     // Payments
