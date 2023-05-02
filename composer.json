@@ -1,11 +1,15 @@
 {
-    "name": "eleirbag89/telegrambotphp",
+    "name": "parsapoorsh/telegrambotphp",
     "description": "A very simple PHP Telegram Bot API",
     "type": "library",
     "authors": [
         {
             "name": "Gabriele Grillo",
             "email": "gabry.grillo@alice.it"
+        },
+        {
+            "name": "Parsa Poorsh",
+            "email": "parsa.poorsh@gmail.com"
         }
     ],
     "license": "MIT",

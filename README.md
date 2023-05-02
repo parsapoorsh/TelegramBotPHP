@@ -3,9 +3,9 @@
 ![PHP](https://img.shields.io/badge/php-%3E%3D5.3-8892bf.svg)
 ![CURL](https://img.shields.io/badge/cURL-required-green.svg)
 
-[![Total Downloads](https://poser.pugx.org/eleirbag89/telegrambotphp/downloads)](https://packagist.org/packages/eleirbag89/telegrambotphp)
-[![License](https://poser.pugx.org/eleirbag89/telegrambotphp/license)](https://packagist.org/packages/eleirbag89/telegrambotphp)
-[![StyleCI](https://styleci.io/repos/38492095/shield?branch=master)](https://styleci.io/repos/38492095)
+[![Total Downloads](https://poser.pugx.org/parsapooorsh/telegrambotphp/downloads)](https://packagist.org/packages/parsapooorsh/telegrambotphp)
+[![License](https://poser.pugx.org/parsapooorsh/telegrambotphp/license)](https://packagist.org/packages/parsapooorsh/telegrambotphp)
+[![StyleCI](https://styleci.io/repos/635079074/shield?branch=master)](https://styleci.io/repos/635079074)
 
 A very simple PHP [Telegram Bot API](https://core.telegram.org/bots).    
 Compliant with the April 16, 2022 Telegram Bot API update.
@@ -31,23 +31,23 @@ Download
 
 From your project directory, run:
 ```
-composer require eleirbag89/telegrambotphp
+composer require parsapooorsh/telegrambotphp
 ```
 or
 ```
-php composer.phar require eleirbag89/telegrambotphp
+php composer.phar require parsapooorsh/telegrambotphp
 ```
 Note: If you don't have Composer you can download it [HERE](https://getcomposer.org/download/).
 
 #### Using release archives
 
-https://github.com/Eleirbag89/TelegramBotPHP/releases
+https://github.com/parsapooorsh/TelegramBotPHP/releases
 
 #### Using Git
 
 From a project directory, run:
 ```
-git clone https://github.com/Eleirbag89/TelegramBotPHP.git
+git clone https://github.com/parsapooorsh/TelegramBotPHP.git
 ```
 
 Installation
@@ -117,9 +117,9 @@ $telegram->downloadFile($file['result']['file_path'], './my_downloaded_file_on_l
 ```
 
 See update.php or update cowsay.php for the complete example.
-If you wanna see the CowSay Bot in action [add it](https://telegram.me/cowmooobot).
+If you want to see the CowSay Bot in action [add it](https://telegram.me/cowmooobot).
 
-If you want to use getUpdates instead of the WebHook you need to call the the `serveUpdate` function inside a for cycle.
+If you want to use getUpdates instead of the WebHook you need to call the `serveUpdate` function inside a for cycle.
 ```php
 $telegram = new Telegram('YOUR TELEGRAM TOKEN HERE');
 
@@ -144,16 +144,14 @@ See getUpdates.php for the complete example.
 Functions
 ------------
 
-For a complete and up-to-date functions documentation check http://eleirbag89.github.io/TelegramBotPHP/
-
 Build keyboards
 ------------
 
 Telegram's bots can have two different kind of keyboards: Inline and Reply.    
 The InlineKeyboard is linked to a particular message, while the ReplyKeyboard is linked to the whole chat.    
-They are both an array of array of buttons, which rapresent the rows and columns.    
-For instance you can arrange a ReplyKeyboard like this:
-![ReplyKeabordExample](https://picload.org/image/rilclcwr/replykeyboard.png)
+They are both an array of array of buttons, which represent the rows and columns.    
+For instance, you can arrange a ReplyKeyboard like this:
+![ReplyKeyboardExample](https://picload.org/image/rilclcwr/replykeyboard.png)
 using this code:
 ```php
 $option = array( 
@@ -169,7 +167,7 @@ $telegram->sendMessage($content);
 ```
 When a user click on the button, the button text is send back to the bot.    
 For an InlineKeyboard it's pretty much the same (but you need to provide a valid URL or a Callback data)
-![InlineKeabordExample](https://picload.org/image/rilclcwa/replykeyboardinline.png)
+![InlineKeyboardExample](https://picload.org/image/rilclcwa/replykeyboardinline.png)
 ```php
 $option = array( 
     //First row
@@ -244,11 +242,4 @@ All kinds of contributions are welcome - code, tests, documentation, bug reports
 Contact me
 ------------
 
-You can contact me [via Telegram](https://telegram.me/ggrillo) but if you have an issue please [open](https://github.com/Eleirbag89/TelegramBotPHP/issues) one.
-
-Support me
-------------
-
-You can support me using via LiberaPay [![Donate using Liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/eleirbag89/donate)
-
-or buy me a beer or two using [Paypal](https://paypal.me/eleirbag89). 
+You can contact me [via Telegram](https://telegram.me/pparsa) but if you have an issue please [open](https://github.com/parsapooorsh/TelegramBotPHP/issues) one.

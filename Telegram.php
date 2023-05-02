@@ -8,6 +8,7 @@ if (file_exists('TelegramErrorLogger.php')) {
  * Telegram Bot Class.
  *
  * @author Gabriele Grillo <gabry.grillo@alice.it>
+ * @author Parsa Poorsh <parsa.poorsh@gmail.com>
  */
 class Telegram
 {
