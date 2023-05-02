@@ -86,11 +86,11 @@ class Telegram
     const MY_CHAT_MEMBER = 'my_chat_member';
 
     private $api;
-    private $bot_token;
-    private $data;
-    private $updates = [];
-    private $log_errors;
-    private $proxy;
+    private string $bot_token;
+    private array $data;
+    private array $updates = [];
+    private bool $log_errors;
+    private array $proxy;
     private $update_type;
 
     /**
@@ -102,7 +102,7 @@ class Telegram
      *
      * @return void an instance of the class.
      */
-    public function __construct($bot_token, $log_errors = true, array $proxy = [], $api = 'https://api.telegram.org')
+    public function __construct(string $bot_token, bool $log_errors = true, array $proxy = [], $api = 'https://api.telegram.org')
     {
         $this->bot_token = $bot_token;
         $this->data = $this->getData();
@@ -120,7 +120,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function endpoint($api, array $content, $post = true)
+    public function endpoint(string $api, array $content, bool $post = true): array
     {
         $url = $this->api.'/bot'.$this->bot_token.'/'.$api;
         if ($post) {
@@ -137,7 +137,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function getMe()
+    public function getMe(): array
     {
         return $this->endpoint('getMe', [], false);
     }
@@ -147,7 +147,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function logOut()
+    public function logOut(): array
     {
         return $this->endpoint('logOut', [], false);
     }
@@ -157,7 +157,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function close()
+    public function close(): array
     {
         return $this->endpoint('close', [], false);
     }
@@ -165,7 +165,7 @@ class Telegram
     /**
      * @return string the HTTP 200 to Telegram.
      */
-    public function respondSuccess()
+    public function respondSuccess(): string
     {
         http_response_code(200);
 
@@ -179,7 +179,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendMessage(array $content)
+    public function sendMessage(array $content): array
     {
         return $this->endpoint('sendMessage', $content);
     }
@@ -191,7 +191,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function copyMessage(array $content)
+    public function copyMessage(array $content): array
     {
         return $this->endpoint('copyMessage', $content);
     }
@@ -203,7 +203,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function forwardMessage(array $content)
+    public function forwardMessage(array $content): array
     {
         return $this->endpoint('forwardMessage', $content);
     }
@@ -215,7 +215,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendPhoto(array $content)
+    public function sendPhoto(array $content): array
     {
         return $this->endpoint('sendPhoto', $content);
     }
@@ -227,7 +227,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendAudio(array $content)
+    public function sendAudio(array $content): array
     {
         return $this->endpoint('sendAudio', $content);
     }
@@ -239,7 +239,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendDocument(array $content)
+    public function sendDocument(array $content): array
     {
         return $this->endpoint('sendDocument', $content);
     }
@@ -251,7 +251,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendAnimation(array $content)
+    public function sendAnimation(array $content): array
     {
         return $this->endpoint('sendAnimation', $content);
     }
@@ -263,7 +263,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendSticker(array $content)
+    public function sendSticker(array $content): array
     {
         return $this->endpoint('sendSticker', $content);
     }
@@ -275,7 +275,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendVideo(array $content)
+    public function sendVideo(array $content): array
     {
         return $this->endpoint('sendVideo', $content);
     }
@@ -287,7 +287,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendVoice(array $content)
+    public function sendVoice(array $content): array
     {
         return $this->endpoint('sendVoice', $content);
     }
@@ -299,7 +299,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendLocation(array $content)
+    public function sendLocation(array $content): array
     {
         return $this->endpoint('sendLocation', $content);
     }
@@ -311,7 +311,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function editMessageLiveLocation(array $content)
+    public function editMessageLiveLocation(array $content): array
     {
         return $this->endpoint('editMessageLiveLocation', $content);
     }
@@ -323,7 +323,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function stopMessageLiveLocation(array $content)
+    public function stopMessageLiveLocation(array $content): array
     {
         return $this->endpoint('stopMessageLiveLocation', $content);
     }
@@ -335,7 +335,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setChatStickerSet(array $content)
+    public function setChatStickerSet(array $content): array
     {
         return $this->endpoint('setChatStickerSet', $content);
     }
@@ -347,7 +347,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function deleteChatStickerSet(array $content)
+    public function deleteChatStickerSet(array $content): array
     {
         return $this->endpoint('deleteChatStickerSet', $content);
     }
@@ -359,7 +359,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendMediaGroup(array $content)
+    public function sendMediaGroup(array $content): array
     {
         return $this->endpoint('sendMediaGroup', $content);
     }
@@ -371,12 +371,10 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendVenue(array $content)
+    public function sendVenue(array $content): array
     {
         return $this->endpoint('sendVenue', $content);
     }
-
-    //Send contact
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendcontact">sendContact</a> for the input values.
@@ -385,12 +383,10 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendContact(array $content)
+    public function sendContact(array $content): array
     {
         return $this->endpoint('sendContact', $content);
     }
-
-    //Send a poll
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendpoll">sendPoll</a> for the input values.
@@ -399,12 +395,10 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendPoll(array $content)
+    public function sendPoll(array $content): array
     {
         return $this->endpoint('sendPoll', $content);
     }
-
-    //Send a dice
 
     /**
      * See <a href="https://core.telegram.org/bots/api#senddice">sendDice</a> for the input values.
@@ -413,7 +407,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendDice(array $content)
+    public function sendDice(array $content): array
     {
         return $this->endpoint('sendDice', $content);
     }
@@ -425,7 +419,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendChatAction(array $content)
+    public function sendChatAction(array $content): array
     {
         return $this->endpoint('sendChatAction', $content);
     }
@@ -437,7 +431,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function getUserProfilePhotos(array $content)
+    public function getUserProfilePhotos(array $content): array
     {
         return $this->endpoint('getUserProfilePhotos', $content);
     }
@@ -449,7 +443,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function getFile($file_id)
+    public function getFile(string $file_id): array
     {
         $content = ['file_id' => $file_id];
 
@@ -461,7 +455,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function kickChatMember(array $content)
+    public function kickChatMember(array $content): array
     {
         return $this->endpoint('kickChatMember', $content);
     }
@@ -473,7 +467,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function leaveChat(array $content)
+    public function leaveChat(array $content): array
     {
         return $this->endpoint('leaveChat', $content);
     }
@@ -485,7 +479,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function banChatMember(array $content)
+    public function banChatMember(array $content): array
     {
         return $this->endpoint('banChatMember', $content);
     }
@@ -497,7 +491,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function unbanChatMember(array $content)
+    public function unbanChatMember(array $content): array
     {
         return $this->endpoint('unbanChatMember', $content);
     }
@@ -509,7 +503,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function getChat(array $content)
+    public function getChat(array $content): array
     {
         return $this->endpoint('getChat', $content);
     }
@@ -521,7 +515,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function getChatAdministrators(array $content)
+    public function getChatAdministrators(array $content): array
     {
         return $this->endpoint('getChatAdministrators', $content);
     }
@@ -533,7 +527,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function getChatMemberCount(array $content)
+    public function getChatMemberCount(array $content): array
     {
         return $this->endpoint('getChatMemberCount', $content);
     }
@@ -545,7 +539,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function getChatMembersCount(array $content)
+    public function getChatMembersCount(array $content): array
     {
         return $this->getChatMemberCount($content);
     }
@@ -557,7 +551,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function getChatMember(array $content)
+    public function getChatMember(array $content): array
     {
         return $this->endpoint('getChatMember', $content);
     }
@@ -569,7 +563,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function answerInlineQuery(array $content)
+    public function answerInlineQuery(array $content): array
     {
         return $this->endpoint('answerInlineQuery', $content);
     }
@@ -581,7 +575,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setGameScore(array $content)
+    public function setGameScore(array $content): array
     {
         return $this->endpoint('setGameScore', $content);
     }
@@ -593,7 +587,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function getGameHighScores(array $content)
+    public function getGameHighScores(array $content): array
     {
         return $this->endpoint('getGameHighScores', $content);
     }
@@ -605,7 +599,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function answerCallbackQuery(array $content)
+    public function answerCallbackQuery(array $content): array
     {
         return $this->endpoint('answerCallbackQuery', $content);
     }
@@ -617,7 +611,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setMyCommands(array $content)
+    public function setMyCommands(array $content): array
     {
         return $this->endpoint('setMyCommands', $content);
     }
@@ -629,7 +623,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function deleteMyCommands(array $content)
+    public function deleteMyCommands(array $content): array
     {
         return $this->endpoint('deleteMyCommands', $content);
     }
@@ -641,7 +635,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function getMyCommands(array $content)
+    public function getMyCommands(array $content): array
     {
         return $this->endpoint('getMyCommands', $content);
     }
@@ -653,7 +647,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setChatMenuButton(array $content)
+    public function setChatMenuButton(array $content): array
     {
         return $this->endpoint('setChatMenuButton', $content);
     }
@@ -665,7 +659,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function getChatMenuButton(array $content)
+    public function getChatMenuButton(array $content): array
     {
         return $this->endpoint('getChatMenuButton', $content);
     }
@@ -677,7 +671,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setMyDefaultAdministratorRights(array $content)
+    public function setMyDefaultAdministratorRights(array $content): array
     {
         return $this->endpoint('setMyDefaultAdministratorRights', $content);
     }
@@ -689,7 +683,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function getMyDefaultAdministratorRights(array $content)
+    public function getMyDefaultAdministratorRights(array $content): array
     {
         return $this->endpoint('getMyDefaultAdministratorRights', $content);
     }
@@ -701,7 +695,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function editMessageText(array $content)
+    public function editMessageText(array $content): array
     {
         return $this->endpoint('editMessageText', $content);
     }
@@ -713,7 +707,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function editMessageCaption(array $content)
+    public function editMessageCaption(array $content): array
     {
         return $this->endpoint('editMessageCaption', $content);
     }
@@ -725,7 +719,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function editMessageMedia(array $content)
+    public function editMessageMedia(array $content): array
     {
         return $this->endpoint('editMessageMedia', $content);
     }
@@ -737,7 +731,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function editMessageReplyMarkup(array $content)
+    public function editMessageReplyMarkup(array $content): array
     {
         return $this->endpoint('editMessageReplyMarkup', $content);
     }
@@ -749,7 +743,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function stopPoll(array $content)
+    public function stopPoll(array $content): array
     {
         return $this->endpoint('stopPoll', $content);
     }
@@ -760,7 +754,7 @@ class Telegram
      * @param $telegram_file_path string File path on Telegram servers
      * @param $local_file_path string File path where save the file.
      */
-    public function downloadFile($telegram_file_path, $local_file_path)
+    public function downloadFile(string $telegram_file_path, string $local_file_path)
     {
         $file_url = $this->api.'/file/bot'.$this->bot_token.'/'.$telegram_file_path;
         $in = fopen($file_url, 'rb');
@@ -783,7 +777,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setWebhook($url, $certificate = '')
+    public function setWebhook(string $url, string $certificate = ''): array
     {
         if ($certificate == '') {
             $requestBody = ['url' => $url];
@@ -799,7 +793,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function deleteWebhook()
+    public function deleteWebhook(): array
     {
         return $this->endpoint('deleteWebhook', [], false);
     }
@@ -807,15 +801,14 @@ class Telegram
     /** Get the POST request of a user in a Webhook or the message actually processed in a getUpdates() environment.
      * @return array the JSON Telegram's update.
      */
-    public function getData()
+    public function getData(): array
     {
         if (empty($this->data)) {
             $rawData = file_get_contents('php://input');
 
             return json_decode($rawData, true);
-        } else {
+        } else
             return $this->data;
-        }
     }
 
     public function setData(array $data)
@@ -826,7 +819,7 @@ class Telegram
     /**
      * @return string the String user's text.
      */
-    public function Text()
+    public function Text(): ?string
     {
         $type = $this->getUpdateType();
         if ($type == self::CALLBACK_QUERY) {
@@ -842,7 +835,7 @@ class Telegram
         return @$this->data['message']['text'];
     }
 
-    public function Caption()
+    public function Caption(): ?string
     {
         $type = $this->getUpdateType();
         if ($type == self::CHANNEL_POST) {
@@ -855,7 +848,7 @@ class Telegram
     /**
      * @return int the user's chat_id.
      */
-    public function ChatID()
+    public function ChatID(): int
     {
         $chat = $this->Chat();
 
@@ -865,7 +858,7 @@ class Telegram
     /**
      * @return array the Array chat.
      */
-    public function Chat()
+    public function Chat(): array
     {
         $type = $this->getUpdateType();
         if ($type == self::CALLBACK_QUERY) {
@@ -890,7 +883,7 @@ class Telegram
     /**
      * @return int the message_id.
      */
-    public function MessageID()
+    public function MessageID(): int
     {
         $type = $this->getUpdateType();
         if ($type == self::CALLBACK_QUERY) {
@@ -909,7 +902,7 @@ class Telegram
     /**
      * @return int the String reply_to_message message_id.
      */
-    public function ReplyToMessageID()
+    public function ReplyToMessageID(): int
     {
         return $this->data['message']['reply_to_message']['message_id'];
     }
@@ -917,7 +910,7 @@ class Telegram
     /**
      * @return int the String reply_to_message forward_from user_id.
      */
-    public function ReplyToMessageFromUserID()
+    public function ReplyToMessageFromUserID(): int
     {
         return $this->data['message']['reply_to_message']['forward_from']['id'];
     }
@@ -925,7 +918,7 @@ class Telegram
     /**
      * @return array the Array inline_query.
      */
-    public function Inline_Query()
+    public function Inline_Query(): array
     {
         return $this->data['inline_query'];
     }
@@ -933,7 +926,7 @@ class Telegram
     /**
      * @return array the String callback_query.
      */
-    public function Callback_Query()
+    public function Callback_Query(): array
     {
         return $this->data['callback_query'];
     }
@@ -941,7 +934,7 @@ class Telegram
     /**
      * @return int the String callback_query id.
      */
-    public function Callback_ID()
+    public function Callback_ID(): int
     {
         return $this->data['callback_query']['id'];
     }
@@ -951,7 +944,7 @@ class Telegram
      *
      * @return string the String callback_data.
      */
-    public function Callback_Data()
+    public function Callback_Data(): string
     {
         return $this->data['callback_query']['data'];
     }
@@ -959,7 +952,7 @@ class Telegram
     /**
      * @return array the Message.
      */
-    public function Callback_Message()
+    public function Callback_Message(): array
     {
         return $this->data['callback_query']['message'];
     }
@@ -969,7 +962,7 @@ class Telegram
      *
      * @return int the String callback_query.
      */
-    public function Callback_ChatID()
+    public function Callback_ChatID(): int
     {
         return $this->data['callback_query']['message']['chat']['id'];
     }
@@ -977,7 +970,7 @@ class Telegram
     /**
      * @return int the String callback_query from_id.
      */
-    public function Callback_FromID()
+    public function Callback_FromID(): int
     {
         return $this->data['callback_query']['from']['id'];
     }
@@ -985,7 +978,7 @@ class Telegram
     /**
      * @return int the String message's date.
      */
-    public function Date()
+    public function Date(): int
     {
         return $this->data['message']['date'];
     }
@@ -993,7 +986,7 @@ class Telegram
     /**
      * @return string the user's first name.
      */
-    public function FirstName()
+    public function FirstName(): ?string
     {
         $type = $this->getUpdateType();
         if ($type == self::CALLBACK_QUERY) {
@@ -1012,7 +1005,7 @@ class Telegram
     /**
      * @return string the user's last name.
      */
-    public function LastName()
+    public function LastName(): ?string
     {
         $type = $this->getUpdateType();
         if ($type == self::CALLBACK_QUERY) {
@@ -1034,7 +1027,7 @@ class Telegram
     /**
      * @return string the user's username.
      */
-    public function Username()
+    public function Username(): ?string
     {
         $type = $this->getUpdateType();
         if ($type == self::CALLBACK_QUERY) {
@@ -1058,7 +1051,7 @@ class Telegram
     /**
      * @return int the update id.
      */
-    public function UpdateID()
+    public function UpdateID(): int
     {
         return $this->data['update_id'];
     }
@@ -1066,7 +1059,7 @@ class Telegram
     /**
      * @return int the number of updates.
      */
-    public function UpdateCount()
+    public function UpdateCount(): int
     {
         return count($this->updates['result']);
     }
@@ -1074,7 +1067,7 @@ class Telegram
     /**
      * @return int the user's id.
      */
-    public function UserID()
+    public function UserID(): int
     {
         $type = $this->getUpdateType();
         if ($type == self::CALLBACK_QUERY) {
@@ -1096,7 +1089,7 @@ class Telegram
     /**
      * @return int the user's id of current forwarded message.
      */
-    public function FromID()
+    public function FromID(): int
     {
         return $this->data['message']['forward_from']['id'];
     }
@@ -1104,7 +1097,7 @@ class Telegram
     /**
      * @return int the chat's id where current message forwarded from.
      */
-    public function FromChatID()
+    public function FromChatID(): int
     {
         return $this->data['message']['forward_from_chat']['id'];
     }
@@ -1112,19 +1105,15 @@ class Telegram
     /**
      *  @return bool true if the message is from a Group chat, false otherwise.
      */
-    public function messageFromGroup()
+    public function messageFromGroup(): bool
     {
-        if ($this->data['message']['chat']['type'] == 'private') {
-            return false;
-        }
-
-        return true;
+        return $this->data['message']['chat']['type'] != 'private';
     }
 
     /**
      *  @return string a String of the contact phone number.
      */
-    public function getContactPhoneNumber()
+    public function getContactPhoneNumber(): string
     {
         if ($this->getUpdateType() == self::CONTACT) {
             return $this->data['message']['contact']['phone_number'];
@@ -1136,7 +1125,7 @@ class Telegram
     /**
      *  @return string a String of the title chat.
      */
-    public function messageFromGroupTitle()
+    public function messageFromGroupTitle(): string
     {
         if ($this->data['message']['chat']['type'] != 'private') {
             return $this->data['message']['chat']['title'];
@@ -1153,7 +1142,7 @@ class Telegram
      *
      * @return string the requested keyboard as Json.
      */
-    public function buildKeyBoard(array $options, $onetime = false, $resize = false, $selective = true)
+    public function buildKeyBoard(array $options, bool $onetime = false, bool $resize = false, bool $selective = true): string
     {
         $replyMarkup = [
             'keyboard'          => $options,
@@ -1170,7 +1159,7 @@ class Telegram
      *
      * @return string the requested keyboard as Json.
      */
-    public function buildInlineKeyBoard(array $options)
+    public function buildInlineKeyBoard(array $options): string
     {
         $replyMarkup = [
             'inline_keyboard' => $options,
@@ -1191,30 +1180,30 @@ class Telegram
      * @return array the requested button as Array.
      */
     public function buildInlineKeyboardButton(
-        $text,
-        $url = '',
-        $callback_data = '',
-        $switch_inline_query = null,
-        $switch_inline_query_current_chat = null,
-        $callback_game = '',
-        $pay = ''
-    ) {
+        string $text,
+        string $url = '',
+        string $callback_data = '',
+        string $switch_inline_query = '',
+        string $switch_inline_query_current_chat = '',
+        string $callback_game = '',
+        bool $pay = false
+    ): array
+    {
         $replyMarkup = [
             'text' => $text,
         ];
-        if ($url != '') {
+        if ($url != '')
             $replyMarkup['url'] = $url;
-        } elseif ($callback_data != '') {
+        elseif ($callback_data != '')
             $replyMarkup['callback_data'] = $callback_data;
-        } elseif (!is_null($switch_inline_query)) {
+        elseif ($switch_inline_query != '')
             $replyMarkup['switch_inline_query'] = $switch_inline_query;
-        } elseif (!is_null($switch_inline_query_current_chat)) {
+        elseif ($switch_inline_query_current_chat != '')
             $replyMarkup['switch_inline_query_current_chat'] = $switch_inline_query_current_chat;
-        } elseif ($callback_game != '') {
+        elseif ($callback_game != '')
             $replyMarkup['callback_game'] = $callback_game;
-        } elseif ($pay != '') {
+        if ($pay)
             $replyMarkup['pay'] = $pay;
-        }
 
         return $replyMarkup;
     }
@@ -1226,7 +1215,7 @@ class Telegram
      *
      * @return array the requested button as Array.
      */
-    public function buildKeyboardButton($text, $request_contact = false, $request_location = false)
+    public function buildKeyboardButton(string $text, bool $request_contact = false, bool $request_location = false): array
     {
         return [
             'text'             => $text,
@@ -1240,7 +1229,7 @@ class Telegram
      *
      * @return string the requested keyboard hide as Array.
      */
-    public function buildKeyBoardHide($selective = true)
+    public function buildKeyBoardHide(bool $selective = true): string
     {
         $replyMarkup = [
             'remove_keyboard' => true,
@@ -1255,7 +1244,7 @@ class Telegram
      *
      * @return string the requested force reply as Array
      */
-    public function buildForceReply($selective = true)
+    public function buildForceReply(bool $selective = true): string
     {
         $replyMarkup = [
             'force_reply' => true,
@@ -1272,7 +1261,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendInvoice(array $content)
+    public function sendInvoice(array $content): array
     {
         return $this->endpoint('sendInvoice', $content);
     }
@@ -1284,7 +1273,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function answerShippingQuery(array $content)
+    public function answerShippingQuery(array $content): array
     {
         return $this->endpoint('answerShippingQuery', $content);
     }
@@ -1296,7 +1285,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function answerPreCheckoutQuery(array $content)
+    public function answerPreCheckoutQuery(array $content): array
     {
         return $this->endpoint('answerPreCheckoutQuery', $content);
     }
@@ -1308,7 +1297,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setPassportDataErrors(array $content)
+    public function setPassportDataErrors(array $content): array
     {
         return $this->endpoint('setPassportDataErrors', $content);
     }
@@ -1320,7 +1309,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendGame(array $content)
+    public function sendGame(array $content): array
     {
         return $this->endpoint('sendGame', $content);
     }
@@ -1332,7 +1321,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function sendVideoNote(array $content)
+    public function sendVideoNote(array $content): array
     {
         return $this->endpoint('sendVideoNote', $content);
     }
@@ -1344,7 +1333,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function restrictChatMember(array $content)
+    public function restrictChatMember(array $content): array
     {
         return $this->endpoint('restrictChatMember', $content);
     }
@@ -1356,7 +1345,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function promoteChatMember(array $content)
+    public function promoteChatMember(array $content): array
     {
         return $this->endpoint('promoteChatMember', $content);
     }
@@ -1368,7 +1357,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setChatAdministratorCustomTitle(array $content)
+    public function setChatAdministratorCustomTitle(array $content): array
     {
         return $this->endpoint('setChatAdministratorCustomTitle', $content);
     }
@@ -1380,7 +1369,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function banChatSenderChat(array $content)
+    public function banChatSenderChat(array $content): array
     {
         return $this->endpoint('banChatSenderChat', $content);
     }
@@ -1392,7 +1381,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function unbanChatSenderChat(array $content)
+    public function unbanChatSenderChat(array $content): array
     {
         return $this->endpoint('unbanChatSenderChat', $content);
     }
@@ -1404,7 +1393,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setChatPermissions(array $content)
+    public function setChatPermissions(array $content): array
     {
         return $this->endpoint('setChatPermissions', $content);
     }
@@ -1416,7 +1405,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function exportChatInviteLink(array $content)
+    public function exportChatInviteLink(array $content): array
     {
         return $this->endpoint('exportChatInviteLink', $content);
     }
@@ -1428,7 +1417,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function createChatInviteLink(array $content)
+    public function createChatInviteLink(array $content): array
     {
         return $this->endpoint('createChatInviteLink', $content);
     }
@@ -1440,7 +1429,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function editChatInviteLink(array $content)
+    public function editChatInviteLink(array $content): array
     {
         return $this->endpoint('editChatInviteLink', $content);
     }
@@ -1452,7 +1441,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function revokeChatInviteLink(array $content)
+    public function revokeChatInviteLink(array $content): array
     {
         return $this->endpoint('revokeChatInviteLink', $content);
     }
@@ -1464,7 +1453,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function approveChatJoinRequest(array $content)
+    public function approveChatJoinRequest(array $content): array
     {
         return $this->endpoint('approveChatJoinRequest', $content);
     }
@@ -1476,7 +1465,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function declineChatJoinRequest(array $content)
+    public function declineChatJoinRequest(array $content): array
     {
         return $this->endpoint('declineChatJoinRequest', $content);
     }
@@ -1488,7 +1477,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setChatPhoto(array $content)
+    public function setChatPhoto(array $content): array
     {
         return $this->endpoint('setChatPhoto', $content);
     }
@@ -1500,7 +1489,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function deleteChatPhoto(array $content)
+    public function deleteChatPhoto(array $content): array
     {
         return $this->endpoint('deleteChatPhoto', $content);
     }
@@ -1512,7 +1501,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setChatTitle(array $content)
+    public function setChatTitle(array $content): array
     {
         return $this->endpoint('setChatTitle', $content);
     }
@@ -1524,7 +1513,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setChatDescription(array $content)
+    public function setChatDescription(array $content): array
     {
         return $this->endpoint('setChatDescription', $content);
     }
@@ -1536,7 +1525,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function pinChatMessage(array $content)
+    public function pinChatMessage(array $content): array
     {
         return $this->endpoint('pinChatMessage', $content);
     }
@@ -1548,7 +1537,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function unpinChatMessage(array $content)
+    public function unpinChatMessage(array $content): array
     {
         return $this->endpoint('unpinChatMessage', $content);
     }
@@ -1560,7 +1549,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function unpinAllChatMessages(array $content)
+    public function unpinAllChatMessages(array $content): array
     {
         return $this->endpoint('unpinAllChatMessages', $content);
     }
@@ -1572,7 +1561,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function getStickerSet(array $content)
+    public function getStickerSet(array $content): array
     {
         return $this->endpoint('getStickerSet', $content);
     }
@@ -1584,7 +1573,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function uploadStickerFile(array $content)
+    public function uploadStickerFile(array $content): array
     {
         return $this->endpoint('uploadStickerFile', $content);
     }
@@ -1596,7 +1585,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function createNewStickerSet(array $content)
+    public function createNewStickerSet(array $content): array
     {
         return $this->endpoint('createNewStickerSet', $content);
     }
@@ -1608,7 +1597,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function addStickerToSet(array $content)
+    public function addStickerToSet(array $content): array
     {
         return $this->endpoint('addStickerToSet', $content);
     }
@@ -1620,7 +1609,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setStickerPositionInSet(array $content)
+    public function setStickerPositionInSet(array $content): array
     {
         return $this->endpoint('setStickerPositionInSet', $content);
     }
@@ -1632,7 +1621,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function deleteStickerFromSet(array $content)
+    public function deleteStickerFromSet(array $content): array
     {
         return $this->endpoint('deleteStickerFromSet', $content);
     }
@@ -1644,7 +1633,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setStickerSetThumb(array $content)
+    public function setStickerSetThumb(array $content): array
     {
         return $this->endpoint('setStickerSetThumb', $content);
     }
@@ -1656,7 +1645,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function deleteMessage(array $content)
+    public function deleteMessage(array $content): array
     {
         return $this->endpoint('deleteMessage', $content);
     }
@@ -1669,12 +1658,13 @@ class Telegram
      *
      * @return array the updates as Array.
      */
-    public function getUpdates($offset = 0, $limit = 100, $timeout = 0, $update = true)
+    public function getUpdates(int $offset = 0, int $limit = 100, int $timeout = 0, bool $update = true): array
     {
         $content = ['offset' => $offset, 'limit' => $limit, 'timeout' => $timeout];
         $this->updates = $this->endpoint('getUpdates', $content);
         if ($update) {
-            if (array_key_exists('result', $this->updates) && is_array($this->updates['result']) && count($this->updates['result']) >= 1) { //for CLI working.
+            //for CLI working.
+            if (array_key_exists('result', $this->updates) && is_array($this->updates['result']) && count($this->updates['result']) >= 1) {
                 $last_element_id = $this->updates['result'][count($this->updates['result']) - 1]['update_id'] + 1;
                 $content = ['offset' => $last_element_id, 'limit' => '1', 'timeout' => $timeout];
                 $this->endpoint('getUpdates', $content);
@@ -1687,7 +1677,7 @@ class Telegram
     /** Use this method to use the builtin function like Text() or Username() on a specific update.
      * @param $update int The index of the update in the updates array.
      */
-    public function serveUpdate($update)
+    public function serveUpdate(int $update)
     {
         $this->data = $this->updates['result'][$update];
     }
@@ -1797,7 +1787,7 @@ class Telegram
 
 // Helper for Uploading file using CURL
 if (!function_exists('curl_file_create')) {
-    function curl_file_create($filename, $mimetype = '', $postname = '')
+    function curl_file_create($filename, $mimetype = '', $postname = ''): string
     {
         return "@$filename;filename="
             .($postname ?: basename($filename))

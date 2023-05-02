@@ -1,6 +1,6 @@
 # TelegramBotPHP
 [![API](https://img.shields.io/badge/Telegram%20Bot%20API-April%2016%2C%202022-36ade1.svg)](https://core.telegram.org/bots/api)
-![PHP](https://img.shields.io/badge/php-%3E%3D5.3-8892bf.svg)
+![PHP](https://img.shields.io/badge/php-%3E%3D7.4-8892bf.svg)
 ![CURL](https://img.shields.io/badge/cURL-required-green.svg)
 
 [![Total Downloads](https://poser.pugx.org/parsapooorsh/telegrambotphp/downloads)](https://packagist.org/packages/parsapooorsh/telegrambotphp)
@@ -13,8 +13,8 @@ Compliant with the April 16, 2022 Telegram Bot API update.
 Requirements
 ---------
 
-* PHP >= 5.3
-* Curl extension for PHP5 must be enabled.
+* PHP >= 7.4
+* Curl extension for PHP7 must be enabled.
 * Telegram API key, you can get one simply with [@BotFather](https://core.telegram.org/bots#botfather) with simple commands right after creating your bot.
 
 For the WebHook:

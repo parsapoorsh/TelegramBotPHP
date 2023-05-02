@@ -15,7 +15,7 @@
     "license": "MIT",
     "minimum-stability": "alpha",
     "require": {
-        "php": ">=5.0",
+        "php": ">=7.4",
         "ext-json": "*",
         "ext-curl": "*"
     },
