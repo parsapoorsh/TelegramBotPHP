@@ -1704,98 +1704,45 @@ class Telegram
         }
 
         $update = $this->data;
-        if (isset($update['inline_query'])) {
+        $this->update_type = false;
+        if (isset($update['inline_query']))
             $this->update_type = self::INLINE_QUERY;
-
-            return $this->update_type;
-        }
-        if (isset($update['callback_query'])) {
+        if (isset($update['callback_query']))
             $this->update_type = self::CALLBACK_QUERY;
-
-            return $this->update_type;
-        }
-        if (isset($update['edited_message'])) {
+        if (isset($update['edited_message']))
             $this->update_type = self::EDITED_MESSAGE;
-
-            return $this->update_type;
-        }
-        if (isset($update['message']['text'])) {
+        if (isset($update['message']['text']))
             $this->update_type = self::MESSAGE;
-
-            return $this->update_type;
-        }
-        if (isset($update['message']['photo'])) {
+        if (isset($update['message']['photo']))
             $this->update_type = self::PHOTO;
-
-            return $this->update_type;
-        }
-        if (isset($update['message']['video'])) {
+        if (isset($update['message']['video']))
             $this->update_type = self::VIDEO;
-
-            return $this->update_type;
-        }
-        if (isset($update['message']['audio'])) {
+        if (isset($update['message']['audio']))
             $this->update_type = self::AUDIO;
-
-            return $this->update_type;
-        }
-        if (isset($update['message']['voice'])) {
+        if (isset($update['message']['voice']))
             $this->update_type = self::VOICE;
-
-            return $this->update_type;
-        }
-        if (isset($update['message']['contact'])) {
+        if (isset($update['message']['contact']))
             $this->update_type = self::CONTACT;
-
-            return $this->update_type;
-        }
-        if (isset($update['message']['location'])) {
+        if (isset($update['message']['location']))
             $this->update_type = self::LOCATION;
-
-            return $this->update_type;
-        }
-        if (isset($update['message']['reply_to_message'])) {
+        if (isset($update['message']['reply_to_message']))
             $this->update_type = self::REPLY;
-
-            return $this->update_type;
-        }
-        if (isset($update['message']['animation'])) {
+        if (isset($update['message']['animation']))
             $this->update_type = self::ANIMATION;
-
-            return $this->update_type;
-        }
-        if (isset($update['message']['sticker'])) {
+        if (isset($update['message']['sticker']))
             $this->update_type = self::STICKER;
-
-            return $this->update_type;
-        }
-        if (isset($update['message']['document'])) {
+        if (isset($update['message']['document']))
             $this->update_type = self::DOCUMENT;
-
-            return $this->update_type;
-        }
-        if (isset($update['message']['new_chat_member'])) {
+        if (isset($update['message']['new_chat_member']))
             $this->update_type = self::NEW_CHAT_MEMBER;
-
-            return $this->update_type;
-        }
-        if (isset($update['message']['left_chat_member'])) {
+        if (isset($update['message']['left_chat_member']))
             $this->update_type = self::LEFT_CHAT_MEMBER;
-
-            return $this->update_type;
-        }
-        if (isset($update['my_chat_member'])) {
+        if (isset($update['my_chat_member']))
             $this->update_type = self::MY_CHAT_MEMBER;
-
-            return $this->update_type;
-        }
-        if (isset($update['channel_post'])) {
+        if (isset($update['channel_post']))
             $this->update_type = self::CHANNEL_POST;
 
-            return $this->update_type;
-        }
-
-        return false;
+        return $this->update_type;
     }
 
     private function sendAPIRequest($url, array $content, $post = true)
