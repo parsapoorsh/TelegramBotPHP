@@ -84,8 +84,8 @@ class Telegram
      */
     const MY_CHAT_MEMBER = 'my_chat_member';
 
-    private $bot_token = '';
-    private $data = [];
+    private $bot_token;
+    private $data;
     private $updates = [];
     private $log_errors;
     private $proxy;
