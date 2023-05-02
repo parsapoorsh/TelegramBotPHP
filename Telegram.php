@@ -94,10 +94,12 @@ class Telegram
     private $update_type;
 
     /**
-     * Create a Telegram instance from the bot token
+     * Create a Telegram instance from the bot token.
+     *
      * @param $bot_token string the bot token
      * @param $log_errors bool enable or disable the logging
      * @param $proxy array with the proxy configuration (url, port, type, auth)
+     *
      * @return void an instance of the class.
      */
     public function __construct($bot_token, $log_errors = true, array $proxy = [], $api = 'https://api.telegram.org')
@@ -110,10 +112,12 @@ class Telegram
     }
 
     /**
-     * Contacts the various API endpoints
+     * Contacts the various API endpoints.
+     *
      * @param $api string the API endpoint
      * @param $content array the request parameters as array
      * @param $post bool tells if $content needs to be sends
+     *
      * @return array the JSON Telegram's reply.
      */
     public function endpoint($api, array $content, $post = true)
@@ -129,7 +133,8 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#getme">getMe</a>
+     * See <a href="https://core.telegram.org/bots/api#getme">getMe</a>.
+     *
      * @return array the JSON Telegram's reply.
      */
     public function getMe()
@@ -138,7 +143,8 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#logout">logOut</a>
+     * See <a href="https://core.telegram.org/bots/api#logout">logOut</a>.
+     *
      * @return array the JSON Telegram's reply.
      */
     public function logOut()
@@ -147,7 +153,8 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#close">close</a>
+     * See <a href="https://core.telegram.org/bots/api#close">close</a>.
+     *
      * @return array the JSON Telegram's reply.
      */
     public function close()
@@ -166,8 +173,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendmessage">sendMessage</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendmessage">sendMessage</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendMessage(array $content)
@@ -176,8 +185,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#copymessage">copyMessage</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#copymessage">copyMessage</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function copyMessage(array $content)
@@ -186,8 +197,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#forwardmessage">forwardMessage</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#forwardmessage">forwardMessage</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function forwardMessage(array $content)
@@ -196,8 +209,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendphoto">sendPhoto</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendphoto">sendPhoto</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendPhoto(array $content)
@@ -206,8 +221,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendaudio">sendAudio</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendaudio">sendAudio</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendAudio(array $content)
@@ -216,8 +233,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#senddocument">sendDocument</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#senddocument">sendDocument</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendDocument(array $content)
@@ -226,8 +245,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendanimation">sendAnimation</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendanimation">sendAnimation</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendAnimation(array $content)
@@ -236,8 +257,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendsticker">sendSticker</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendsticker">sendSticker</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendSticker(array $content)
@@ -246,8 +269,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendvideo">sendVideo</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendvideo">sendVideo</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendVideo(array $content)
@@ -256,8 +281,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendvoice">sendVoice</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendvoice">sendVoice</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendVoice(array $content)
@@ -266,8 +293,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendlocation">sendLocation</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendlocation">sendLocation</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendLocation(array $content)
@@ -276,8 +305,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#editmessageliveLocation">editMessageLiveLocation</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#editmessageliveLocation">editMessageLiveLocation</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function editMessageLiveLocation(array $content)
@@ -286,8 +317,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#stopmessagelivelocation">stopMessageLiveLocation</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#stopmessagelivelocation">stopMessageLiveLocation</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function stopMessageLiveLocation(array $content)
@@ -296,8 +329,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#setchatstickerset">setChatStickerSet</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#setchatstickerset">setChatStickerSet</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function setChatStickerSet(array $content)
@@ -306,8 +341,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#deletechatstickerset">deleteChatStickerSet</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#deletechatstickerset">deleteChatStickerSet</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function deleteChatStickerSet(array $content)
@@ -316,8 +353,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendmediagroup">sendMediaGroup</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendmediagroup">sendMediaGroup</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendMediaGroup(array $content)
@@ -326,8 +365,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendvenue">sendVenue</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendvenue">sendVenue</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendVenue(array $content)
@@ -338,8 +379,10 @@ class Telegram
     //Send contact
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendcontact">sendContact</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendcontact">sendContact</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendContact(array $content)
@@ -350,8 +393,10 @@ class Telegram
     //Send a poll
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendpoll">sendPoll</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendpoll">sendPoll</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendPoll(array $content)
@@ -362,8 +407,10 @@ class Telegram
     //Send a dice
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#senddice">sendDice</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#senddice">sendDice</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendDice(array $content)
@@ -372,8 +419,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendchataction">sendChatAction</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendchataction">sendChatAction</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendChatAction(array $content)
@@ -382,8 +431,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#getuserprofilephotos">getUserProfilePhotos</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#getuserprofilephotos">getUserProfilePhotos</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function getUserProfilePhotos(array $content)
@@ -393,7 +444,9 @@ class Telegram
 
     /**
      *  Use this method to get basic info about a file and prepare it for downloading. For the moment, bots can download files of up to 20MB in size. On success, a File object is returned. The file can then be downloaded via the link https://api.telegram.org/file/bot<token>/<file_path>, where <file_path> is taken from the response. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling getFile again.
+     *
      * @param $file_id string File identifier to get info about
+     *
      * @return array the JSON Telegram's reply.
      */
     public function getFile($file_id)
@@ -404,8 +457,8 @@ class Telegram
     }
 
     /**
-     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function kickChatMember(array $content)
@@ -414,8 +467,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#leavechat">leaveChat</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#leavechat">leaveChat</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function leaveChat(array $content)
@@ -424,8 +479,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#banchatmember">banChatMember</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#banchatmember">banChatMember</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function banChatMember(array $content)
@@ -434,8 +491,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#unbanchatmember">unbanChatMember</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#unbanchatmember">unbanChatMember</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function unbanChatMember(array $content)
@@ -444,8 +503,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#getchat">getChat</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#getchat">getChat</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function getChat(array $content)
@@ -454,8 +515,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#getchatadministrators">getChatAdministrators</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#getchatadministrators">getChatAdministrators</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function getChatAdministrators(array $content)
@@ -464,8 +527,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#getchatmembercount">getChatMemberCount</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#getchatmembercount">getChatMemberCount</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function getChatMemberCount(array $content)
@@ -474,8 +539,10 @@ class Telegram
     }
 
     /**
-     * For retro compatibility
+     * For retro compatibility.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function getChatMembersCount(array $content)
@@ -484,8 +551,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#getchatmember">getChatMember</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#getchatmember">getChatMember</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function getChatMember(array $content)
@@ -494,8 +563,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#answerinlinequery">answerInlineQuery</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#answerinlinequery">answerInlineQuery</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function answerInlineQuery(array $content)
@@ -504,8 +575,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#setgamescore">setGameScore</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#setgamescore">setGameScore</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function setGameScore(array $content)
@@ -514,8 +587,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#getgamehighscores">getGameHighScores</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#getgamehighscores">getGameHighScores</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function getGameHighScores(array $content)
@@ -524,8 +599,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#answercallbackquery">answerCallbackQuery</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#answercallbackquery">answerCallbackQuery</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function answerCallbackQuery(array $content)
@@ -534,8 +611,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#setmycommands">setMyCommands</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#setmycommands">setMyCommands</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function setMyCommands(array $content)
@@ -544,8 +623,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#deletemycommands">deleteMyCommands</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#deletemycommands">deleteMyCommands</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function deleteMyCommands(array $content)
@@ -554,8 +635,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#getmycommands">getMyCommands</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#getmycommands">getMyCommands</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function getMyCommands(array $content)
@@ -564,8 +647,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#setchatmenubutton">setChatMenuButton</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#setchatmenubutton">setChatMenuButton</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function setChatMenuButton(array $content)
@@ -574,8 +659,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#getchatmenubutton">getChatMenuButton</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#getchatmenubutton">getChatMenuButton</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function getChatMenuButton(array $content)
@@ -584,8 +671,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#setmydefaultadministratorrights">setMyDefaultAdministratorRights</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#setmydefaultadministratorrights">setMyDefaultAdministratorRights</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function setMyDefaultAdministratorRights(array $content)
@@ -594,8 +683,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#getmydefaultadministratorrights">getMyDefaultAdministratorRights</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#getmydefaultadministratorrights">getMyDefaultAdministratorRights</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function getMyDefaultAdministratorRights(array $content)
@@ -604,8 +695,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#editmessagetext">editMessageText</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#editmessagetext">editMessageText</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function editMessageText(array $content)
@@ -614,8 +707,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#editmessagecaption">editMessageCaption</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#editmessagecaption">editMessageCaption</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function editMessageCaption(array $content)
@@ -624,8 +719,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#editmessagemedia">editMessageMedia</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#editmessagemedia">editMessageMedia</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function editMessageMedia(array $content)
@@ -634,8 +731,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#editmessagereplymarkup">editMessageReplyMarkup</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#editmessagereplymarkup">editMessageReplyMarkup</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function editMessageReplyMarkup(array $content)
@@ -644,8 +743,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#stoppoll">stopPoll</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#stoppoll">stopPoll</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function stopPoll(array $content)
@@ -655,6 +756,7 @@ class Telegram
 
     /**
      *  Use this method to download a file from the Telegram servers.
+     *
      * @param $telegram_file_path string File path on Telegram servers
      * @param $local_file_path string File path where save the file.
      */
@@ -675,8 +777,10 @@ class Telegram
      *  Use this method to specify an url and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified url, containing a JSON-serialized Update. In case of an unsuccessful request, we will give up after a reasonable amount of attempts.
      *
      * If you'd like to make sure that the Webhook request comes from Telegram, we recommend using a secret path in the URL, e.g. https://www.example.com/<token>. Since nobody else knows your bot token, you can be pretty sure it's us.
+     *
      * @param $url string HTTPS url to send updates to. Use an empty string to remove webhook integration
      * @param $certificate string InputFile Upload your public key certificate so that the root certificate in use can be checked
+     *
      * @return array the JSON Telegram's reply.
      */
     public function setWebhook($url, $certificate = '')
@@ -692,6 +796,7 @@ class Telegram
 
     /**
      *  Use this method to remove webhook integration if you decide to switch back to <a href="https://core.telegram.org/bots/api#getupdates">getUpdates</a>. Returns True on success. Requires no parameters.
+     *
      * @return array the JSON Telegram's reply.
      */
     public function deleteWebhook()
@@ -712,6 +817,7 @@ class Telegram
             return $this->data;
         }
     }
+
     public function setData(array $data)
     {
         $this->data = $data;
@@ -842,6 +948,7 @@ class Telegram
 
     /**
      * @deprecated Use Text() instead
+     *
      * @return string the String callback_data.
      */
     public function Callback_Data()
@@ -859,6 +966,7 @@ class Telegram
 
     /**
      * @deprecated Use ChatId() instead
+     *
      * @return int the String callback_query.
      */
     public function Callback_ChatID()
@@ -881,6 +989,7 @@ class Telegram
     {
         return $this->data['message']['date'];
     }
+
     /**
      * @return string the user's first name.
      */
@@ -899,6 +1008,7 @@ class Telegram
 
         return @$this->data['message']['from']['first_name'];
     }
+
     /**
      * @return string the user's last name.
      */
@@ -920,6 +1030,7 @@ class Telegram
 
         return '';
     }
+
     /**
      * @return string the user's username.
      */
@@ -938,10 +1049,12 @@ class Telegram
 
         return @$this->data['message']['from']['username'];
     }
+
     public function Location()
     {
         return $this->data['message']['location'];
     }
+
     /**
      * @return int the update id.
      */
@@ -949,6 +1062,7 @@ class Telegram
     {
         return $this->data['update_id'];
     }
+
     /**
      * @return int the number of updates.
      */
@@ -956,6 +1070,7 @@ class Telegram
     {
         return count($this->updates['result']);
     }
+
     /**
      * @return int the user's id.
      */
@@ -977,6 +1092,7 @@ class Telegram
 
         return $this->data['message']['from']['id'];
     }
+
     /**
      * @return int the user's id of current forwarded message.
      */
@@ -984,6 +1100,7 @@ class Telegram
     {
         return $this->data['message']['forward_from']['id'];
     }
+
     /**
      * @return int the chat's id where current message forwarded from.
      */
@@ -1028,11 +1145,12 @@ class Telegram
         return '';
     }
 
-    /** This object represents a custom keyboard with reply options
+    /** This object represents a custom keyboard with reply options.
      * @param $options array Array of Array of String; Array of button rows, each represented by an Array of Strings
      * @param $onetime bool Requests clients to hide the keyboard as soon as it's been used. Defaults to false.
      * @param $resize bool Requests clients to resize the keyboard vertically for optimal fit (e.g., make the keyboard smaller if there are just two rows of buttons). Defaults to false, in which case the custom keyboard is always of the same height as the app's standard keyboard.
      * @param $selective bool Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot message is a reply (has reply_to_message_id), sender of the original message.
+     *
      * @return string the requested keyboard as Json.
      */
     public function buildKeyBoard(array $options, $onetime = false, $resize = false, $selective = true)
@@ -1043,11 +1161,13 @@ class Telegram
             'resize_keyboard'   => $resize,
             'selective'         => $selective,
         ];
+
         return json_encode($replyMarkup, true);
     }
 
     /** This object represents an inline keyboard that appears right next to the message it belongs to.
      * @param $options array Array of Array of InlineKeyboardButton; Array of button rows, each represented by an Array of InlineKeyboardButton
+     *
      * @return string the requested keyboard as Json.
      */
     public function buildInlineKeyBoard(array $options)
@@ -1055,6 +1175,7 @@ class Telegram
         $replyMarkup = [
             'inline_keyboard' => $options,
         ];
+
         return json_encode($replyMarkup, true);
     }
 
@@ -1066,6 +1187,7 @@ class Telegram
      * @param $switch_inline_query_current_chat string Optional. Optional. If set, pressing the button will insert the bot username and the specified inline query in the current chat's input field. Can be empty, in which case only the bot’s username will be inserted.
      * @param $callback_game string Optional. Description of the game that will be launched when the user presses the button.
      * @param $pay bool Optional. Specify True, to send a <a href="https://core.telegram.org/bots/api#payments">Pay button</a>.
+     *
      * @return array the requested button as Array.
      */
     public function buildInlineKeyboardButton(
@@ -1101,6 +1223,7 @@ class Telegram
      * @param $text string Array of button rows, each represented by an Array of Strings
      * @param $request_contact bool Optional. If True, the user's phone number will be sent as a contact when the button is pressed. Available in private chats only
      * @param $request_location bool Optional. If True, the user's current location will be sent when the button is pressed. Available in private chats only
+     *
      * @return array the requested button as Array.
      */
     public function buildKeyboardButton($text, $request_contact = false, $request_location = false)
@@ -1114,6 +1237,7 @@ class Telegram
 
     /** Upon receiving a message with this object, Telegram clients will hide the current custom keyboard and display the default letter-keyboard. By default, custom keyboards are displayed until a new keyboard is sent by a bot. An exception is made for one-time keyboards that are hidden immediately after the user presses a button.
      * @param $selective bool Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot message is a reply (has reply_to_message_id), sender of the original message.
+     *
      * @return string the requested keyboard hide as Array.
      */
     public function buildKeyBoardHide($selective = true)
@@ -1122,10 +1246,13 @@ class Telegram
             'remove_keyboard' => true,
             'selective'       => $selective,
         ];
+
         return json_encode($replyMarkup, true);
     }
+
     /** Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot message and tapped Reply). This can be extremely useful if you want to create user-friendly step-by-step interfaces without having to sacrifice privacy mode.
      * @param $selective bool Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot message is a reply (has reply_to_message_id), sender of the original message.
+     *
      * @return string the requested force reply as Array
      */
     public function buildForceReply($selective = true)
@@ -1134,11 +1261,15 @@ class Telegram
             'force_reply' => true,
             'selective'   => $selective,
         ];
+
         return json_encode($replyMarkup, true);
     }
+
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendinvoice">sendInvoice</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendinvoice">sendInvoice</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendInvoice(array $content)
@@ -1147,8 +1278,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#answershippingquery">answerShippingQuery</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#answershippingquery">answerShippingQuery</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function answerShippingQuery(array $content)
@@ -1157,8 +1290,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#answerprecheckoutquery">answerPreCheckoutQuery</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#answerprecheckoutquery">answerPreCheckoutQuery</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function answerPreCheckoutQuery(array $content)
@@ -1167,8 +1302,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#setpassportdataerrors">setPassportDataErrors</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#setpassportdataerrors">setPassportDataErrors</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function setPassportDataErrors(array $content)
@@ -1177,8 +1314,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendgame">sendGame</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendgame">sendGame</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendGame(array $content)
@@ -1187,8 +1326,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#sendvideonote">sendVideoNote</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#sendvideonote">sendVideoNote</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function sendVideoNote(array $content)
@@ -1197,8 +1338,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#restrictchatmember">restrictChatMember</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#restrictchatmember">restrictChatMember</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function restrictChatMember(array $content)
@@ -1207,8 +1350,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#promotechatmember">promoteChatMember</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#promotechatmember">promoteChatMember</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function promoteChatMember(array $content)
@@ -1217,8 +1362,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#setchatadministratorcustomtitle">setChatAdministratorCustomTitle</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#setchatadministratorcustomtitle">setChatAdministratorCustomTitle</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function setChatAdministratorCustomTitle(array $content)
@@ -1227,8 +1374,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#banchatsenderchat">banChatSenderChat</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#banchatsenderchat">banChatSenderChat</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function banChatSenderChat(array $content)
@@ -1237,8 +1386,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#unbanchatsenderchat">unbanChatSenderChat</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#unbanchatsenderchat">unbanChatSenderChat</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function unbanChatSenderChat(array $content)
@@ -1247,8 +1398,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#setchatpermissions">setChatPermissions</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#setchatpermissions">setChatPermissions</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function setChatPermissions(array $content)
@@ -1257,8 +1410,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#exportchatinvitelink">exportChatInviteLink</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#exportchatinvitelink">exportChatInviteLink</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function exportChatInviteLink(array $content)
@@ -1267,8 +1422,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#createchatinvitelink">createChatInviteLink</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#createchatinvitelink">createChatInviteLink</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function createChatInviteLink(array $content)
@@ -1277,8 +1434,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#editchatinvitelink">editChatInviteLink</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#editchatinvitelink">editChatInviteLink</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function editChatInviteLink(array $content)
@@ -1287,8 +1446,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#revokechatinvitelink">revokeChatInviteLink</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#revokechatinvitelink">revokeChatInviteLink</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function revokeChatInviteLink(array $content)
@@ -1297,8 +1458,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#approvechatjoinrequest">approveChatJoinRequest</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#approvechatjoinrequest">approveChatJoinRequest</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function approveChatJoinRequest(array $content)
@@ -1307,8 +1470,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#declinechatjoinrequest">declineChatJoinRequest</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#declinechatjoinrequest">declineChatJoinRequest</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function declineChatJoinRequest(array $content)
@@ -1317,8 +1482,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#setchatphoto">setChatPhoto</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#setchatphoto">setChatPhoto</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function setChatPhoto(array $content)
@@ -1327,8 +1494,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#deletechatphoto">deleteChatPhoto</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#deletechatphoto">deleteChatPhoto</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function deleteChatPhoto(array $content)
@@ -1337,8 +1506,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#setchattitle">setChatTitle</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#setchattitle">setChatTitle</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function setChatTitle(array $content)
@@ -1347,8 +1518,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#setchatdescription">setChatDescription</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#setchatdescription">setChatDescription</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function setChatDescription(array $content)
@@ -1357,8 +1530,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#pinchatmessage">pinChatMessage</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#pinchatmessage">pinChatMessage</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function pinChatMessage(array $content)
@@ -1367,8 +1542,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#unpinchatmessage">unpinChatMessage</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#unpinchatmessage">unpinChatMessage</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function unpinChatMessage(array $content)
@@ -1377,8 +1554,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#unpinallchatmessages">unpinAllChatMessages</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#unpinallchatmessages">unpinAllChatMessages</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function unpinAllChatMessages(array $content)
@@ -1387,8 +1566,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#getstickerset">getStickerSet</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#getstickerset">getStickerSet</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function getStickerSet(array $content)
@@ -1397,8 +1578,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#uploadstickerfile">uploadStickerFile</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#uploadstickerfile">uploadStickerFile</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function uploadStickerFile(array $content)
@@ -1407,8 +1590,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#createnewstickerset">createNewStickerSet</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#createnewstickerset">createNewStickerSet</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function createNewStickerSet(array $content)
@@ -1417,8 +1602,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#addstickertoset">addStickerToSet</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#addstickertoset">addStickerToSet</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function addStickerToSet(array $content)
@@ -1427,8 +1614,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#setstickerpositioninset">setStickerPositionInSet</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#setstickerpositioninset">setStickerPositionInSet</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function setStickerPositionInSet(array $content)
@@ -1437,8 +1626,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#deletestickerfromset">deleteStickerFromSet</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#deletestickerfromset">deleteStickerFromSet</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function deleteStickerFromSet(array $content)
@@ -1447,8 +1638,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#setstickersetthumb">setStickerSetThumb</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#setstickersetthumb">setStickerSetThumb</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function setStickerSetThumb(array $content)
@@ -1457,8 +1650,10 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#deletemessage">deleteMessage</a> for the input values
+     * See <a href="https://core.telegram.org/bots/api#deletemessage">deleteMessage</a> for the input values.
+     *
      * @param $content array the request parameters as array
+     *
      * @return array the JSON Telegram's reply.
      */
     public function deleteMessage(array $content)
@@ -1471,6 +1666,7 @@ class Telegram
      * @param $limit int Limits the number of updates to be retrieved. Values between 1—100 are accepted. Defaults to 100
      * @param $timeout int Timeout in seconds for long polling. Defaults to 0, i.e. usual short polling
      * @param $update bool If true updates the pending message list to the last update received. Default to true.
+     *
      * @return array the updates as Array.
      */
     public function getUpdates($offset = 0, $limit = 100, $timeout = 0, $update = true)
