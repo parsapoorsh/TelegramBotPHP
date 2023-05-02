@@ -91,7 +91,7 @@ class Telegram
     private $proxy;
     private $update_type;
 
-    /// Class constructor
+    // Class constructor
 
     /**
      * Create a Telegram instance from the bot token
@@ -108,7 +108,7 @@ class Telegram
         $this->proxy = $proxy;
     }
 
-    /// Do requests to Telegram Bot API
+    // Do requests to Telegram Bot API
 
     /**
      * Contacts the various API endpoints
@@ -129,7 +129,7 @@ class Telegram
         return json_decode($reply, true);
     }
 
-    /// A method for testing your bot.
+    // A method for testing your bot.
 
     /**
      * See <a href="https://core.telegram.org/bots/api#getme">getMe</a>
@@ -158,7 +158,7 @@ class Telegram
         return $this->endpoint('close', [], false);
     }
 
-    /// A method for responding http to Telegram.
+    // A method for responding http to Telegram.
 
     /**
      * \return the HTTP 200 to Telegram.
@@ -170,7 +170,7 @@ class Telegram
         return json_encode(['status' => 'success']);
     }
 
-    /// Send a message
+    // Send a message
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendmessage">sendMessage</a> for the input values
@@ -182,7 +182,7 @@ class Telegram
         return $this->endpoint('sendMessage', $content);
     }
 
-    /// Copy a message
+    // Copy a message
 
     /**
      * See <a href="https://core.telegram.org/bots/api#copymessage">copyMessage</a> for the input values
@@ -194,7 +194,7 @@ class Telegram
         return $this->endpoint('copyMessage', $content);
     }
 
-    /// Forward a message
+    // Forward a message
 
     /**
      * See <a href="https://core.telegram.org/bots/api#forwardmessage">forwardMessage</a> for the input values
@@ -206,7 +206,7 @@ class Telegram
         return $this->endpoint('forwardMessage', $content);
     }
 
-    /// Send a photo
+    // Send a photo
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendphoto">sendPhoto</a> for the input values
@@ -218,7 +218,7 @@ class Telegram
         return $this->endpoint('sendPhoto', $content);
     }
 
-    /// Send an audio
+    // Send an audio
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendaudio">sendAudio</a> for the input values
@@ -230,7 +230,7 @@ class Telegram
         return $this->endpoint('sendAudio', $content);
     }
 
-    /// Send a document
+    // Send a document
 
     /**
      * See <a href="https://core.telegram.org/bots/api#senddocument">sendDocument</a> for the input values
@@ -242,7 +242,7 @@ class Telegram
         return $this->endpoint('sendDocument', $content);
     }
 
-    /// Send an animation
+    // Send an animation
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendanimation">sendAnimation</a> for the input values
@@ -254,7 +254,7 @@ class Telegram
         return $this->endpoint('sendAnimation', $content);
     }
 
-    /// Send a sticker
+    // Send a sticker
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendsticker">sendSticker</a> for the input values
@@ -266,7 +266,7 @@ class Telegram
         return $this->endpoint('sendSticker', $content);
     }
 
-    /// Send a video
+    // Send a video
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendvideo">sendVideo</a> for the input values
@@ -278,7 +278,7 @@ class Telegram
         return $this->endpoint('sendVideo', $content);
     }
 
-    /// Send a voice message
+    // Send a voice message
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendvoice">sendVoice</a> for the input values
@@ -290,7 +290,7 @@ class Telegram
         return $this->endpoint('sendVoice', $content);
     }
 
-    /// Send a location
+    // Send a location
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendlocation">sendLocation</a> for the input values
@@ -302,7 +302,7 @@ class Telegram
         return $this->endpoint('sendLocation', $content);
     }
 
-    /// Edit Message Live Location
+    // Edit Message Live Location
 
     /**
      * See <a href="https://core.telegram.org/bots/api#editmessageliveLocation">editMessageLiveLocation</a> for the input values
@@ -314,7 +314,7 @@ class Telegram
         return $this->endpoint('editMessageLiveLocation', $content);
     }
 
-    /// Stop Message Live Location
+    // Stop Message Live Location
 
     /**
      * See <a href="https://core.telegram.org/bots/api#stopmessagelivelocation">stopMessageLiveLocation</a> for the input values
@@ -326,7 +326,7 @@ class Telegram
         return $this->endpoint('stopMessageLiveLocation', $content);
     }
 
-    /// Set Chat Sticker Set
+    // Set Chat Sticker Set
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setchatstickerset">setChatStickerSet</a> for the input values
@@ -338,7 +338,7 @@ class Telegram
         return $this->endpoint('setChatStickerSet', $content);
     }
 
-    /// Delete Chat Sticker Set
+    // Delete Chat Sticker Set
 
     /**
      * See <a href="https://core.telegram.org/bots/api#deletechatstickerset">deleteChatStickerSet</a> for the input values
@@ -350,7 +350,7 @@ class Telegram
         return $this->endpoint('deleteChatStickerSet', $content);
     }
 
-    /// Send Media Group
+    // Send Media Group
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendmediagroup">sendMediaGroup</a> for the input values
@@ -362,7 +362,7 @@ class Telegram
         return $this->endpoint('sendMediaGroup', $content);
     }
 
-    /// Send Venue
+    // Send Venue
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendvenue">sendVenue</a> for the input values
@@ -410,7 +410,7 @@ class Telegram
         return $this->endpoint('sendDice', $content);
     }
 
-    /// Send a chat action
+    // Send a chat action
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendchataction">sendChatAction</a> for the input values
@@ -422,7 +422,7 @@ class Telegram
         return $this->endpoint('sendChatAction', $content);
     }
 
-    /// Get a list of profile pictures for a user
+    // Get a list of profile pictures for a user
 
     /**
      * See <a href="https://core.telegram.org/bots/api#getuserprofilephotos">getUserProfilePhotos</a> for the input values
@@ -434,7 +434,7 @@ class Telegram
         return $this->endpoint('getUserProfilePhotos', $content);
     }
 
-    /// Use this method to get basic info about a file and prepare it for downloading
+    // Use this method to get basic info about a file and prepare it for downloading
 
     /**
      *  Use this method to get basic info about a file and prepare it for downloading. For the moment, bots can download files of up to 20MB in size. On success, a File object is returned. The file can then be downloaded via the link https://api.telegram.org/file/bot<token>/<file_path>, where <file_path> is taken from the response. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling getFile again.
@@ -448,7 +448,7 @@ class Telegram
         return $this->endpoint('getFile', $content);
     }
 
-    /// Kick Chat Member
+    // Kick Chat Member
 
     /**
      * Deprecated
@@ -460,7 +460,7 @@ class Telegram
         return $this->endpoint('kickChatMember', $content);
     }
 
-    /// Leave Chat
+    // Leave Chat
 
     /**
      * See <a href="https://core.telegram.org/bots/api#leavechat">leaveChat</a> for the input values
@@ -472,7 +472,7 @@ class Telegram
         return $this->endpoint('leaveChat', $content);
     }
 
-    /// Ban Chat Member
+    // Ban Chat Member
 
     /**
      * See <a href="https://core.telegram.org/bots/api#banchatmember">banChatMember</a> for the input values
@@ -484,7 +484,7 @@ class Telegram
         return $this->endpoint('banChatMember', $content);
     }
 
-    /// Unban Chat Member
+    // Unban Chat Member
 
     /**
      * See <a href="https://core.telegram.org/bots/api#unbanchatmember">unbanChatMember</a> for the input values
@@ -496,7 +496,7 @@ class Telegram
         return $this->endpoint('unbanChatMember', $content);
     }
 
-    /// Get Chat Information
+    // Get Chat Information
 
     /**
      * See <a href="https://core.telegram.org/bots/api#getchat">getChat</a> for the input values
@@ -508,7 +508,7 @@ class Telegram
         return $this->endpoint('getChat', $content);
     }
 
-    /// Get chat Administrators
+    // Get chat Administrators
 
     /**
      * See <a href="https://core.telegram.org/bots/api#getchatadministrators">getChatAdministrators</a> for the input values
@@ -520,7 +520,7 @@ class Telegram
         return $this->endpoint('getChatAdministrators', $content);
     }
 
-    /// Get chat member count
+    // Get chat member count
 
     /**
      * See <a href="https://core.telegram.org/bots/api#getchatmembercount">getChatMemberCount</a> for the input values
@@ -562,7 +562,7 @@ class Telegram
         return $this->endpoint('answerInlineQuery', $content);
     }
 
-    /// Set Game Score
+    // Set Game Score
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setgamescore">setGameScore</a> for the input values
@@ -574,7 +574,7 @@ class Telegram
         return $this->endpoint('setGameScore', $content);
     }
 
-    /// Get Game Hi Scores
+    // Get Game Hi Scores
 
     /**
      * See <a href="https://core.telegram.org/bots/api#getgamehighscores">getGameHighScores</a> for the input values
@@ -586,7 +586,7 @@ class Telegram
         return $this->endpoint('getGameHighScores', $content);
     }
 
-    /// Answer a callback Query
+    // Answer a callback Query
 
     /**
      * See <a href="https://core.telegram.org/bots/api#answercallbackquery">answerCallbackQuery</a> for the input values
@@ -598,7 +598,7 @@ class Telegram
         return $this->endpoint('answerCallbackQuery', $content);
     }
 
-    /// Set the list of the bot commands
+    // Set the list of the bot commands
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setmycommands">setMyCommands</a> for the input values
@@ -610,7 +610,7 @@ class Telegram
         return $this->endpoint('setMyCommands', $content);
     }
 
-    /// Delete the list of the bot commands
+    // Delete the list of the bot commands
 
     /**
      * See <a href="https://core.telegram.org/bots/api#deletemycommands">deleteMyCommands</a> for the input values
@@ -622,7 +622,7 @@ class Telegram
         return $this->endpoint('deleteMyCommands', $content);
     }
 
-    /// Get the list of the bot commands
+    // Get the list of the bot commands
 
     /**
      * See <a href="https://core.telegram.org/bots/api#getmycommands">getMyCommands</a> for the input values
@@ -634,7 +634,7 @@ class Telegram
         return $this->endpoint('getMyCommands', $content);
     }
 
-    /// Set the chat menu button
+    // Set the chat menu button
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setchatmenubutton">setChatMenuButton</a> for the input values
@@ -646,7 +646,7 @@ class Telegram
         return $this->endpoint('setChatMenuButton', $content);
     }
 
-    /// Get the chat menu button
+    // Get the chat menu button
 
     /**
      * See <a href="https://core.telegram.org/bots/api#getchatmenubutton">getChatMenuButton</a> for the input values
@@ -658,7 +658,7 @@ class Telegram
         return $this->endpoint('getChatMenuButton', $content);
     }
 
-    /// Set the default administrator rights
+    // Set the default administrator rights
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setmydefaultadministratorrights">setMyDefaultAdministratorRights</a> for the input values
@@ -670,7 +670,7 @@ class Telegram
         return $this->endpoint('setMyDefaultAdministratorRights', $content);
     }
 
-    /// Get the default administrator rights
+    // Get the default administrator rights
 
     /**
      * See <a href="https://core.telegram.org/bots/api#getmydefaultadministratorrights">getMyDefaultAdministratorRights</a> for the input values
@@ -732,7 +732,7 @@ class Telegram
         return $this->endpoint('stopPoll', $content);
     }
 
-    /// Use this method to download a file
+    // Use this method to download a file
 
     /**
      *  Use this method to download a file from the Telegram servers.
@@ -752,7 +752,7 @@ class Telegram
         fclose($out);
     }
 
-    /// Set a WebHook for the bot
+    // Set a WebHook for the bot
 
     /**
      *  Use this method to specify an url and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified url, containing a JSON-serialized Update. In case of an unsuccessful request, we will give up after a reasonable amount of attempts.
@@ -773,7 +773,7 @@ class Telegram
         return $this->endpoint('setWebhook', $requestBody, true);
     }
 
-    /// Delete the WebHook for the bot
+    // Delete the WebHook for the bot
 
     /**
      *  Use this method to remove webhook integration if you decide to switch back to <a href="https://core.telegram.org/bots/api#getupdates">getUpdates</a>. Returns True on success. Requires no parameters.
@@ -784,7 +784,7 @@ class Telegram
         return $this->endpoint('deleteWebhook', [], false);
     }
 
-    /// Get the data of the current message
+    // Get the data of the current message
 
     /** Get the POST request of a user in a Webhook or the message actually processed in a getUpdates() environment.
      * \return the JSON user's message.
@@ -800,13 +800,13 @@ class Telegram
         }
     }
 
-    /// Set the data currently used
+    // Set the data currently used
     public function setData(array $data)
     {
         $this->data = $data;
     }
 
-    /// Get the text of the current message
+    // Get the text of the current message
 
     /**
      * \return the String user's text.
@@ -837,7 +837,7 @@ class Telegram
         return @$this->data['message']['caption'];
     }
 
-    /// Get the chat_id of the current message
+    // Get the chat_id of the current message
 
     /**
      * \return the String user's chat_id.
@@ -874,7 +874,7 @@ class Telegram
         return $this->data['message']['chat'];
     }
 
-    /// Get the message_id of the current message
+    // Get the message_id of the current message
 
     /**
      * \return the String message_id.
@@ -895,7 +895,7 @@ class Telegram
         return $this->data['message']['message_id'];
     }
 
-    /// Get the reply_to_message message_id of the current message
+    // Get the reply_to_message message_id of the current message
 
     /**
      * \return the String reply_to_message message_id.
@@ -905,7 +905,7 @@ class Telegram
         return $this->data['message']['reply_to_message']['message_id'];
     }
 
-    /// Get the reply_to_message forward_from user_id of the current message
+    // Get the reply_to_message forward_from user_id of the current message
 
     /**
      * \return the String reply_to_message forward_from user_id.
@@ -915,7 +915,7 @@ class Telegram
         return $this->data['message']['reply_to_message']['forward_from']['id'];
     }
 
-    /// Get the inline_query of the current update
+    // Get the inline_query of the current update
 
     /**
      * \return the Array inline_query.
@@ -925,7 +925,7 @@ class Telegram
         return $this->data['inline_query'];
     }
 
-    /// Get the callback_query of the current update
+    // Get the callback_query of the current update
 
     /**
      * \return the String callback_query.
@@ -935,7 +935,7 @@ class Telegram
         return $this->data['callback_query'];
     }
 
-    /// Get the callback_query id of the current update
+    // Get the callback_query id of the current update
 
     /**
      * \return the String callback_query id.
@@ -945,7 +945,7 @@ class Telegram
         return $this->data['callback_query']['id'];
     }
 
-    /// Get the data of the current callback
+    // Get the data of the current callback
 
     /**
      * \deprecated Use Text() instead
@@ -956,7 +956,7 @@ class Telegram
         return $this->data['callback_query']['data'];
     }
 
-    /// Get the message of the current callback
+    // Get the message of the current callback
 
     /**
      * \return the Message.
@@ -966,7 +966,7 @@ class Telegram
         return $this->data['callback_query']['message'];
     }
 
-    /// Get the chat_id of the current callback
+    // Get the chat_id of the current callback
 
     /**
      * \deprecated Use ChatId() instead
@@ -977,7 +977,7 @@ class Telegram
         return $this->data['callback_query']['message']['chat']['id'];
     }
 
-    /// Get the from_id of the current callback
+    // Get the from_id of the current callback
 
     /**
      * \return the String callback_query from_id.
@@ -987,7 +987,7 @@ class Telegram
         return $this->data['callback_query']['from']['id'];
     }
 
-    /// Get the date of the current message
+    // Get the date of the current message
 
     /**
      * \return the String message's date.
@@ -997,7 +997,7 @@ class Telegram
         return $this->data['message']['date'];
     }
 
-    /// Get the first name of the user
+    // Get the first name of the user
     public function FirstName()
     {
         $type = $this->getUpdateType();
@@ -1014,7 +1014,7 @@ class Telegram
         return @$this->data['message']['from']['first_name'];
     }
 
-    /// Get the last name of the user
+    // Get the last name of the user
     public function LastName()
     {
         $type = $this->getUpdateType();
@@ -1034,7 +1034,7 @@ class Telegram
         return '';
     }
 
-    /// Get the username of the user
+    // Get the username of the user
     public function Username()
     {
         $type = $this->getUpdateType();
@@ -1051,25 +1051,25 @@ class Telegram
         return @$this->data['message']['from']['username'];
     }
 
-    /// Get the location in the message
+    // Get the location in the message
     public function Location()
     {
         return $this->data['message']['location'];
     }
 
-    /// Get the update_id of the message
+    // Get the update_id of the message
     public function UpdateID()
     {
         return $this->data['update_id'];
     }
 
-    /// Get the number of updates
+    // Get the number of updates
     public function UpdateCount()
     {
         return count($this->updates['result']);
     }
 
-    /// Get user's id of current message
+    // Get user's id of current message
     public function UserID()
     {
         $type = $this->getUpdateType();
@@ -1089,19 +1089,19 @@ class Telegram
         return $this->data['message']['from']['id'];
     }
 
-    /// Get user's id of current forwarded message
+    // Get user's id of current forwarded message
     public function FromID()
     {
         return $this->data['message']['forward_from']['id'];
     }
 
-    /// Get chat's id where current message forwarded from
+    // Get chat's id where current message forwarded from
     public function FromChatID()
     {
         return $this->data['message']['forward_from_chat']['id'];
     }
 
-    /// Tell if a message is from a group or user chat
+    // Tell if a message is from a group or user chat
 
     /**
      *  \return BOOLEAN true if the message is from a Group chat, false otherwise.
@@ -1115,7 +1115,7 @@ class Telegram
         return true;
     }
 
-    /// Get the contact phone number
+    // Get the contact phone number
 
     /**
      *  \return a String of the contact phone number.
@@ -1129,7 +1129,7 @@ class Telegram
         return '';
     }
 
-    /// Get the title of the group chat
+    // Get the title of the group chat
 
     /**
      *  \return a String of the title chat.
@@ -1143,7 +1143,7 @@ class Telegram
         return '';
     }
 
-    /// Set a custom keyboard
+    // Set a custom keyboard
 
     /** This object represents a custom keyboard with reply options
      * \param $options Array of Array of String; Array of button rows, each represented by an Array of Strings
@@ -1163,7 +1163,7 @@ class Telegram
         return json_encode($replyMarkup, true);
     }
 
-    /// Set an InlineKeyBoard
+    // Set an InlineKeyBoard
 
     /** This object represents an inline keyboard that appears right next to the message it belongs to.
      * \param $options Array of Array of InlineKeyboardButton; Array of button rows, each represented by an Array of InlineKeyboardButton
@@ -1177,7 +1177,7 @@ class Telegram
         return json_encode($replyMarkup, true);
     }
 
-    /// Create an InlineKeyboardButton
+    // Create an InlineKeyboardButton
 
     /** This object represents one button of an inline keyboard. You must use exactly one of the optional fields.
      * \param $text String; Array of button rows, each represented by an Array of Strings
@@ -1218,7 +1218,7 @@ class Telegram
         return $replyMarkup;
     }
 
-    /// Create a KeyboardButton
+    // Create a KeyboardButton
 
     /** This object represents one button of an inline keyboard. You must use exactly one of the optional fields.
      * \param $text String; Array of button rows, each represented by an Array of Strings
@@ -1235,7 +1235,7 @@ class Telegram
         ];
     }
 
-    /// Hide a custom keyboard
+    // Hide a custom keyboard
 
     /** Upon receiving a message with this object, Telegram clients will hide the current custom keyboard and display the default letter-keyboard. By default, custom keyboards are displayed until a new keyboard is sent by a bot. An exception is made for one-time keyboards that are hidden immediately after the user presses a button.
      * \param $selective Boolean Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot message is a reply (has reply_to_message_id), sender of the original message.
@@ -1250,7 +1250,7 @@ class Telegram
         return json_encode($replyMarkup, true);
     }
 
-    /// Display a reply interface to the user
+    // Display a reply interface to the user
     /* Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot message and tapped Reply). This can be extremely useful if you want to create user-friendly step-by-step interfaces without having to sacrifice privacy mode.
      * \param $selective Boolean Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot message is a reply (has reply_to_message_id), sender of the original message.
      * \return the requested force reply as Array
@@ -1265,7 +1265,7 @@ class Telegram
     }
 
     // Payments
-    /// Send an invoice
+    // Send an invoice
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendinvoice">sendInvoice</a> for the input values
@@ -1277,7 +1277,7 @@ class Telegram
         return $this->endpoint('sendInvoice', $content);
     }
 
-    /// Answer a shipping query
+    // Answer a shipping query
 
     /**
      * See <a href="https://core.telegram.org/bots/api#answershippingquery">answerShippingQuery</a> for the input values
@@ -1289,7 +1289,7 @@ class Telegram
         return $this->endpoint('answerShippingQuery', $content);
     }
 
-    /// Answer a PreCheckout query
+    // Answer a PreCheckout query
 
     /**
      * See <a href="https://core.telegram.org/bots/api#answerprecheckoutquery">answerPreCheckoutQuery</a> for the input values
@@ -1301,7 +1301,7 @@ class Telegram
         return $this->endpoint('answerPreCheckoutQuery', $content);
     }
 
-    /// Set Passport data errors
+    // Set Passport data errors
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setpassportdataerrors">setPassportDataErrors</a> for the input values
@@ -1313,7 +1313,7 @@ class Telegram
         return $this->endpoint('setPassportDataErrors', $content);
     }
 
-    /// Send a Game
+    // Send a Game
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendgame">sendGame</a> for the input values
@@ -1325,7 +1325,7 @@ class Telegram
         return $this->endpoint('sendGame', $content);
     }
 
-    /// Send a video note
+    // Send a video note
 
     /**
      * See <a href="https://core.telegram.org/bots/api#sendvideonote">sendVideoNote</a> for the input values
@@ -1337,7 +1337,7 @@ class Telegram
         return $this->endpoint('sendVideoNote', $content);
     }
 
-    /// Restrict Chat Member
+    // Restrict Chat Member
 
     /**
      * See <a href="https://core.telegram.org/bots/api#restrictchatmember">restrictChatMember</a> for the input values
@@ -1349,7 +1349,7 @@ class Telegram
         return $this->endpoint('restrictChatMember', $content);
     }
 
-    /// Promote Chat Member
+    // Promote Chat Member
 
     /**
      * See <a href="https://core.telegram.org/bots/api#promotechatmember">promoteChatMember</a> for the input values
@@ -1361,7 +1361,7 @@ class Telegram
         return $this->endpoint('promoteChatMember', $content);
     }
 
-    /// Set chat Administrator custom title
+    // Set chat Administrator custom title
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setchatadministratorcustomtitle">setChatAdministratorCustomTitle</a> for the input values
@@ -1373,7 +1373,7 @@ class Telegram
         return $this->endpoint('setChatAdministratorCustomTitle', $content);
     }
 
-    /// Ban a channel chat in a super group or channel
+    // Ban a channel chat in a super group or channel
 
     /**
      * See <a href="https://core.telegram.org/bots/api#banchatsenderchat">banChatSenderChat</a> for the input values
@@ -1385,7 +1385,7 @@ class Telegram
         return $this->endpoint('banChatSenderChat', $content);
     }
 
-    /// Unban a channel chat in a super group or channel
+    // Unban a channel chat in a super group or channel
 
     /**
      * See <a href="https://core.telegram.org/bots/api#unbanchatsenderchat">unbanChatSenderChat</a> for the input values
@@ -1397,7 +1397,7 @@ class Telegram
         return $this->endpoint('unbanChatSenderChat', $content);
     }
 
-    /// Set default chat permission for all members
+    // Set default chat permission for all members
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setchatpermissions">setChatPermissions</a> for the input values
@@ -1409,7 +1409,7 @@ class Telegram
         return $this->endpoint('setChatPermissions', $content);
     }
 
-    //// Export Chat Invite Link
+    // Export Chat Invite Link
 
     /**
      * See <a href="https://core.telegram.org/bots/api#exportchatinvitelink">exportChatInviteLink</a> for the input values
@@ -1421,7 +1421,7 @@ class Telegram
         return $this->endpoint('exportChatInviteLink', $content);
     }
 
-    //// Create Chat Invite Link
+    // Create Chat Invite Link
 
     /**
      * See <a href="https://core.telegram.org/bots/api#createchatinvitelink">createChatInviteLink</a> for the input values
@@ -1433,7 +1433,7 @@ class Telegram
         return $this->endpoint('createChatInviteLink', $content);
     }
 
-    //// Edit Chat Invite Link
+    // Edit Chat Invite Link
 
     /**
      * See <a href="https://core.telegram.org/bots/api#editchatinvitelink">editChatInviteLink</a> for the input values
@@ -1445,7 +1445,7 @@ class Telegram
         return $this->endpoint('editChatInviteLink', $content);
     }
 
-    //// Revoke Chat Invite Link
+    // Revoke Chat Invite Link
 
     /**
      * See <a href="https://core.telegram.org/bots/api#revokechatinvitelink">revokeChatInviteLink</a> for the input values
@@ -1457,7 +1457,7 @@ class Telegram
         return $this->endpoint('revokeChatInviteLink', $content);
     }
 
-    //// Approve chat join request
+    // Approve chat join request
 
     /**
      * See <a href="https://core.telegram.org/bots/api#approvechatjoinrequest">approveChatJoinRequest</a> for the input values
@@ -1469,7 +1469,7 @@ class Telegram
         return $this->endpoint('approveChatJoinRequest', $content);
     }
 
-    //// Decline chat join request
+    // Decline chat join request
 
     /**
      * See <a href="https://core.telegram.org/bots/api#declinechatjoinrequest">declineChatJoinRequest</a> for the input values
@@ -1481,7 +1481,7 @@ class Telegram
         return $this->endpoint('declineChatJoinRequest', $content);
     }
 
-    /// Set Chat Photo
+    // Set Chat Photo
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setchatphoto">setChatPhoto</a> for the input values
@@ -1493,7 +1493,7 @@ class Telegram
         return $this->endpoint('setChatPhoto', $content);
     }
 
-    /// Delete Chat Photo
+    // Delete Chat Photo
 
     /**
      * See <a href="https://core.telegram.org/bots/api#deletechatphoto">deleteChatPhoto</a> for the input values
@@ -1505,7 +1505,7 @@ class Telegram
         return $this->endpoint('deleteChatPhoto', $content);
     }
 
-    /// Set Chat Title
+    // Set Chat Title
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setchattitle">setChatTitle</a> for the input values
@@ -1517,7 +1517,7 @@ class Telegram
         return $this->endpoint('setChatTitle', $content);
     }
 
-    /// Set Chat Description
+    // Set Chat Description
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setchatdescription">setChatDescription</a> for the input values
@@ -1529,7 +1529,7 @@ class Telegram
         return $this->endpoint('setChatDescription', $content);
     }
 
-    /// Pin Chat Message
+    // Pin Chat Message
 
     /**
      * See <a href="https://core.telegram.org/bots/api#pinchatmessage">pinChatMessage</a> for the input values
@@ -1541,7 +1541,7 @@ class Telegram
         return $this->endpoint('pinChatMessage', $content);
     }
 
-    /// Unpin Chat Message
+    // Unpin Chat Message
 
     /**
      * See <a href="https://core.telegram.org/bots/api#unpinchatmessage">unpinChatMessage</a> for the input values
@@ -1553,7 +1553,7 @@ class Telegram
         return $this->endpoint('unpinChatMessage', $content);
     }
 
-    /// Unpin All Chat Messages
+    // Unpin All Chat Messages
 
     /**
      * See <a href="https://core.telegram.org/bots/api#unpinallchatmessages">unpinAllChatMessages</a> for the input values
@@ -1565,7 +1565,7 @@ class Telegram
         return $this->endpoint('unpinAllChatMessages', $content);
     }
 
-    /// Get Sticker Set
+    // Get Sticker Set
 
     /**
      * See <a href="https://core.telegram.org/bots/api#getstickerset">getStickerSet</a> for the input values
@@ -1577,7 +1577,7 @@ class Telegram
         return $this->endpoint('getStickerSet', $content);
     }
 
-    /// Upload Sticker File
+    // Upload Sticker File
 
     /**
      * See <a href="https://core.telegram.org/bots/api#uploadstickerfile">uploadStickerFile</a> for the input values
@@ -1589,7 +1589,7 @@ class Telegram
         return $this->endpoint('uploadStickerFile', $content);
     }
 
-    /// Create New Sticker Set
+    // Create New Sticker Set
 
     /**
      * See <a href="https://core.telegram.org/bots/api#createnewstickerset">createNewStickerSet</a> for the input values
@@ -1601,7 +1601,7 @@ class Telegram
         return $this->endpoint('createNewStickerSet', $content);
     }
 
-    /// Add Sticker To Set
+    // Add Sticker To Set
 
     /**
      * See <a href="https://core.telegram.org/bots/api#addstickertoset">addStickerToSet</a> for the input values
@@ -1613,7 +1613,7 @@ class Telegram
         return $this->endpoint('addStickerToSet', $content);
     }
 
-    /// Set Sticker Position In Set
+    // Set Sticker Position In Set
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setstickerpositioninset">setStickerPositionInSet</a> for the input values
@@ -1625,7 +1625,7 @@ class Telegram
         return $this->endpoint('setStickerPositionInSet', $content);
     }
 
-    /// Delete Sticker From Set
+    // Delete Sticker From Set
 
     /**
      * See <a href="https://core.telegram.org/bots/api#deletestickerfromset">deleteStickerFromSet</a> for the input values
@@ -1637,7 +1637,7 @@ class Telegram
         return $this->endpoint('deleteStickerFromSet', $content);
     }
 
-    /// Set Sticker Thumb From Set
+    // Set Sticker Thumb From Set
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setstickersetthumb">setStickerSetThumb</a> for the input values
@@ -1649,7 +1649,7 @@ class Telegram
         return $this->endpoint('setStickerSetThumb', $content);
     }
 
-    /// Delete a message
+    // Delete a message
 
     /**
      * See <a href="https://core.telegram.org/bots/api#deletemessage">deleteMessage</a> for the input values
@@ -1661,7 +1661,7 @@ class Telegram
         return $this->endpoint('deleteMessage', $content);
     }
 
-    /// Receive incoming messages using polling
+    // Receive incoming messages using polling
 
     /** Use this method to receive incoming updates using long polling.
      * \param $offset Integer Identifier of the first update to be returned. Must be greater by one than the highest among the identifiers of previously received updates. By default, updates starting with the earliest unconfirmed update are returned. An update is considered confirmed as soon as getUpdates is called with an offset higher than its update_id.
@@ -1685,7 +1685,7 @@ class Telegram
         return $this->updates;
     }
 
-    /// Serve an update
+    // Serve an update
 
     /** Use this method to use the builtin function like Text() or Username() on a specific update.
      * \param $update Integer The index of the update in the updates array.
@@ -1695,7 +1695,7 @@ class Telegram
         $this->data = $this->updates['result'][$update];
     }
 
-    /// Return current update type
+    // Return current update type
 
     /**
      * Return current update type `False` on failure.
