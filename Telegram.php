@@ -111,7 +111,7 @@ class Telegram
     /// Do requests to Telegram Bot API
 
     /**
-     * Contacts the various API's endpoints
+     * Contacts the various API endpoints
      * \param $api the API endpoint
      * \param $content the request parameters as array
      * \param $post boolean tells if $content needs to be sends
@@ -533,7 +533,7 @@ class Telegram
     }
 
     /**
-     * For retrocompatibility
+     * For retro compatibility
      * \param $content the request parameters as array
      * \return the JSON Telegram's reply.
      */
@@ -658,7 +658,7 @@ class Telegram
         return $this->endpoint('getChatMenuButton', $content);
     }
 
-    /// Set the default aministrator rights
+    /// Set the default administrator rights
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setmydefaultadministratorrights">setMyDefaultAdministratorRights</a> for the input values
@@ -670,7 +670,7 @@ class Telegram
         return $this->endpoint('setMyDefaultAdministratorRights', $content);
     }
 
-    /// Get the default aministrator rights
+    /// Get the default administrator rights
 
     /**
      * See <a href="https://core.telegram.org/bots/api#getmydefaultadministratorrights">getMyDefaultAdministratorRights</a> for the input values
@@ -735,7 +735,7 @@ class Telegram
     /// Use this method to download a file
 
     /**
-     *  Use this method to to download a file from the Telegram servers.
+     *  Use this method to download a file from the Telegram servers.
      * \param $telegram_file_path String File path on Telegram servers
      * \param $local_file_path String File path where save the file.
      */
@@ -755,9 +755,9 @@ class Telegram
     /// Set a WebHook for the bot
 
     /**
-     *  Use this method to specify a url and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified url, containing a JSON-serialized Update. In case of an unsuccessful request, we will give up after a reasonable amount of attempts.
+     *  Use this method to specify an url and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified url, containing a JSON-serialized Update. In case of an unsuccessful request, we will give up after a reasonable amount of attempts.
      *
-     * If you'd like to make sure that the Webhook request comes from Telegram, we recommend using a secret path in the URL, e.g. https://www.example.com/<token>. Since nobody else knows your botâ€˜s token, you can be pretty sure itâ€™s us.
+     * If you'd like to make sure that the Webhook request comes from Telegram, we recommend using a secret path in the URL, e.g. https://www.example.com/<token>. Since nobody else knows your bot token, you can be pretty sure it's us.
      * \param $url String HTTPS url to send updates to. Use an empty string to remove webhook integration
      * \param $certificate InputFile Upload your public key certificate so that the root certificate in use can be checked
      * \return the JSON Telegram's reply.
@@ -786,8 +786,8 @@ class Telegram
 
     /// Get the data of the current message
 
-    /** Get the POST request of a user in a Webhook or the message actually processed in a getUpdates() enviroment.
-     * \return the JSON users's message.
+    /** Get the POST request of a user in a Webhook or the message actually processed in a getUpdates() environment.
+     * \return the JSON user's message.
      */
     public function getData()
     {
@@ -809,7 +809,7 @@ class Telegram
     /// Get the text of the current message
 
     /**
-     * \return the String users's text.
+     * \return the String user's text.
      */
     public function Text()
     {
@@ -840,7 +840,7 @@ class Telegram
     /// Get the chat_id of the current message
 
     /**
-     * \return the String users's chat_id.
+     * \return the String user's chat_id.
      */
     public function ChatID()
     {
@@ -945,7 +945,7 @@ class Telegram
         return $this->data['callback_query']['id'];
     }
 
-    /// Get the Get the data of the current callback
+    /// Get the data of the current callback
 
     /**
      * \deprecated Use Text() instead
@@ -956,7 +956,7 @@ class Telegram
         return $this->data['callback_query']['data'];
     }
 
-    /// Get the Get the message of the current callback
+    /// Get the message of the current callback
 
     /**
      * \return the Message.
@@ -966,7 +966,7 @@ class Telegram
         return $this->data['callback_query']['message'];
     }
 
-    /// Get the Get the chat_id of the current callback
+    /// Get the chat_id of the current callback
 
     /**
      * \deprecated Use ChatId() instead
@@ -977,7 +977,7 @@ class Telegram
         return $this->data['callback_query']['message']['chat']['id'];
     }
 
-    /// Get the Get the from_id of the current callback
+    /// Get the from_id of the current callback
 
     /**
      * \return the String callback_query from_id.
@@ -1149,7 +1149,7 @@ class Telegram
      * \param $options Array of Array of String; Array of button rows, each represented by an Array of Strings
      * \param $onetime Boolean Requests clients to hide the keyboard as soon as it's been used. Defaults to false.
      * \param $resize Boolean Requests clients to resize the keyboard vertically for optimal fit (e.g., make the keyboard smaller if there are just two rows of buttons). Defaults to false, in which case the custom keyboard is always of the same height as the app's standard keyboard.
-     * \param $selective Boolean Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message.
+     * \param $selective Boolean Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot message is a reply (has reply_to_message_id), sender of the original message.
      * \return the requested keyboard as Json.
      */
     public function buildKeyBoard(array $options, $onetime = false, $resize = false, $selective = true)
@@ -1183,8 +1183,8 @@ class Telegram
      * \param $text String; Array of button rows, each represented by an Array of Strings
      * \param $url String Optional. HTTP url to be opened when button is pressed
      * \param $callback_data String Optional. Data to be sent in a callback query to the bot when button is pressed
-     * \param $switch_inline_query String Optional. If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot‘s username and the specified inline query in the input field. Can be empty, in which case just the bot’s username will be inserted.
-     * \param $switch_inline_query_current_chat String Optional. Optional. If set, pressing the button will insert the bot‘s username and the specified inline query in the current chat's input field. Can be empty, in which case only the bot’s username will be inserted.
+     * \param $switch_inline_query String Optional. If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot username and the specified inline query in the input field. Can be empty, in which case just the bot’s username will be inserted.
+     * \param $switch_inline_query_current_chat String Optional. Optional. If set, pressing the button will insert the bot username and the specified inline query in the current chat's input field. Can be empty, in which case only the bot’s username will be inserted.
      * \param $callback_game  String Optional. Description of the game that will be launched when the user presses the button.
      * \param $pay  Boolean Optional. Specify True, to send a <a href="https://core.telegram.org/bots/api#payments">Pay button</a>.
      * \return the requested button as Array.
@@ -1238,7 +1238,7 @@ class Telegram
     /// Hide a custom keyboard
 
     /** Upon receiving a message with this object, Telegram clients will hide the current custom keyboard and display the default letter-keyboard. By default, custom keyboards are displayed until a new keyboard is sent by a bot. An exception is made for one-time keyboards that are hidden immediately after the user presses a button.
-     * \param $selective Boolean Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message.
+     * \param $selective Boolean Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot message is a reply (has reply_to_message_id), sender of the original message.
      * \return the requested keyboard hide as Array.
      */
     public function buildKeyBoardHide($selective = true)
@@ -1251,8 +1251,8 @@ class Telegram
     }
 
     /// Display a reply interface to the user
-    /* Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot‘s message and tapped ’Reply'). This can be extremely useful if you want to create user-friendly step-by-step interfaces without having to sacrifice privacy mode.
-     * \param $selective Boolean Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message.
+    /* Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot message and tapped Reply). This can be extremely useful if you want to create user-friendly step-by-step interfaces without having to sacrifice privacy mode.
+     * \param $selective Boolean Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot message is a reply (has reply_to_message_id), sender of the original message.
      * \return the requested force reply as Array
      */
     public function buildForceReply($selective = true)
@@ -1687,7 +1687,7 @@ class Telegram
 
     /// Serve an update
 
-    /** Use this method to use the bultin function like Text() or Username() on a specific update.
+    /** Use this method to use the builtin function like Text() or Username() on a specific update.
      * \param $update Integer The index of the update in the updates array.
      */
     public function serveUpdate($update)
