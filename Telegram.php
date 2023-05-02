@@ -85,6 +85,7 @@ class Telegram
      */
     const MY_CHAT_MEMBER = 'my_chat_member';
 
+    private $api;
     private $bot_token;
     private $data;
     private $updates = [];
@@ -99,12 +100,13 @@ class Telegram
      * @param $proxy array with the proxy configuration (url, port, type, auth)
      * @return void an instance of the class.
      */
-    public function __construct($bot_token, $log_errors = true, array $proxy = [])
+    public function __construct($bot_token, $log_errors = true, array $proxy = [], $api = 'https://api.telegram.org')
     {
         $this->bot_token = $bot_token;
         $this->data = $this->getData();
         $this->log_errors = $log_errors;
         $this->proxy = $proxy;
+        $this->api = $api;
     }
 
     /**
@@ -116,7 +118,7 @@ class Telegram
      */
     public function endpoint($api, array $content, $post = true)
     {
-        $url = 'https://api.telegram.org/bot'.$this->bot_token.'/'.$api;
+        $url = $this->api.'/bot'.$this->bot_token.'/'.$api;
         if ($post) {
             $reply = $this->sendAPIRequest($url, $content);
         } else {
@@ -658,7 +660,7 @@ class Telegram
      */
     public function downloadFile($telegram_file_path, $local_file_path)
     {
-        $file_url = 'https://api.telegram.org/file/bot'.$this->bot_token.'/'.$telegram_file_path;
+        $file_url = $this->api.'/file/bot'.$this->bot_token.'/'.$telegram_file_path;
         $in = fopen($file_url, 'rb');
         $out = fopen($local_file_path, 'wb');
 
