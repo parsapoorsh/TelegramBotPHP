@@ -605,6 +605,18 @@ class Telegram
     }
 
     /**
+     * See <a href="https://core.telegram.org/bots/api#answerwebappquery</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function answerWebAppQuery(array $content): array
+    {
+        return $this->endpoint('answerWebAppQuery', $content);
+    }
+
+    /**
      * See <a href="https://core.telegram.org/bots/api#setmycommands">setMyCommands</a> for the input values.
      *
      * @param $content array the request parameters as array
