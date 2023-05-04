@@ -795,7 +795,8 @@ class Telegram
         string $ip_address = '',
         int $max_connections = 0,
         array $allowed_updates = [],
-        bool $drop_pending_updates = false
+        bool $drop_pending_updates = false,
+        string $secret_token = ''
     ): array
     {
         $requestBody = ['url' => $url];
@@ -809,6 +810,8 @@ class Telegram
             $requestBody['allowed_updates'] = json_encode($allowed_updates);
         if ($drop_pending_updates)
             $requestBody['drop_pending_updates'] = $drop_pending_updates;
+        if ($secret_token != '')
+            $requestBody['secret_token'] = $secret_token;
 
         return $this->endpoint('setWebhook', $requestBody, true);
     }
@@ -1289,6 +1292,18 @@ class Telegram
     public function sendInvoice(array $content): array
     {
         return $this->endpoint('sendInvoice', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#createInvoiceLink">createInvoiceLink</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function createInvoiceLink(array $content): array
+    {
+        return $this->endpoint('createInvoiceLink', $content);
     }
 
     /**
