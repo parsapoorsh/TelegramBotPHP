@@ -1595,6 +1595,90 @@ class Telegram
     }
 
     /**
+     * See <a href="https://core.telegram.org/bots/api#createForumTopic">createForumTopic</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function createForumTopic(array $content): array
+    {
+        return $this->endpoint('createForumTopic', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#editForumTopic">editForumTopic</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function editForumTopic(array $content): array
+    {
+        return $this->endpoint('editForumTopic', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#closeForumTopic">closeForumTopic</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function closeForumTopic(array $content): array
+    {
+        return $this->endpoint('closeForumTopic', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#reopenForumTopic">reopenForumTopic</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function reopenForumTopic(array $content): array
+    {
+        return $this->endpoint('reopenForumTopic', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#deleteForumTopic">deleteForumTopic</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function deleteForumTopic(array $content): array
+    {
+        return $this->endpoint('deleteForumTopic', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#unpinAllForumTopicMessages">unpinAllForumTopicMessages</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function unpinAllForumTopicMessages(array $content): array
+    {
+        return $this->endpoint('unpinAllForumTopicMessages', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#getForumTopicIconStickers ">getForumTopicIconStickers </a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function getForumTopicIconStickers (array $content): array
+    {
+        return $this->endpoint('getForumTopicIconStickers ', $content);
+    }
+
+    /**
      * See <a href="https://core.telegram.org/bots/api#getstickerset">getStickerSet</a> for the input values.
      *
      * @param $content array the request parameters as array
