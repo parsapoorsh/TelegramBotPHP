@@ -1607,6 +1607,18 @@ class Telegram
     }
 
     /**
+     * See <a href="https://core.telegram.org/bots/api#getstickerset">getCustomEmojiStickers</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function getCustomEmojiStickers(array $content): array
+    {
+        return $this->endpoint('getCustomEmojiStickers', $content);
+    }
+
+    /**
      * See <a href="https://core.telegram.org/bots/api#uploadstickerfile">uploadStickerFile</a> for the input values.
      *
      * @param $content array the request parameters as array

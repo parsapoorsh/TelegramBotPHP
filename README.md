@@ -1,5 +1,5 @@
 # TelegramBotPHP
-[![API](https://img.shields.io/badge/Telegram%20Bot%20API-June%2020%2C%202022-36ade1.svg)](https://core.telegram.org/bots/api)
+[![API](https://img.shields.io/badge/Telegram%20Bot%20API-August%2012,%202022-36ade1.svg)](https://core.telegram.org/bots/api)
 ![PHP](https://img.shields.io/badge/php-%3E%3D7.4-8892bf.svg)
 ![CURL](https://img.shields.io/badge/cURL-required-green.svg)
 
@@ -8,7 +8,7 @@
 [![StyleCI](https://styleci.io/repos/635079074/shield?branch=master)](https://styleci.io/repos/635079074)
 
 A very simple PHP [Telegram Bot API](https://core.telegram.org/bots).    
-Compliant with the June 20, 2022 Telegram Bot API update.
+Compliant with the August 12, 2022 Telegram Bot API update.
 
 Requirements
 ---------
