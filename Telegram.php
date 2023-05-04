@@ -789,13 +789,26 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function setWebhook(string $url, string $certificate = ''): array
+    public function setWebhook(
+        string $url,
+        string $certificate = '',
+        string $ip_address = '',
+        int $max_connections = 0,
+        array $allowed_updates = [],
+        bool $drop_pending_updates = false
+    ): array
     {
-        if ($certificate == '') {
-            $requestBody = ['url' => $url];
-        } else {
-            $requestBody = ['url' => $url, 'certificate' => "@$certificate"];
-        }
+        $requestBody = ['url' => $url];
+        if ($certificate != '')
+            $requestBody['certificate'] = "@$certificate";
+        if ($ip_address != '')
+            $requestBody['ip_address'] = $ip_address;
+        if ($max_connections != 0)
+            $requestBody['max_connections'] = $max_connections;
+        if (count($allowed_updates) > 0)
+            $requestBody['allowed_updates'] = json_encode($allowed_updates);
+        if ($drop_pending_updates)
+            $requestBody['drop_pending_updates'] = $drop_pending_updates;
 
         return $this->endpoint('setWebhook', $requestBody, true);
     }
