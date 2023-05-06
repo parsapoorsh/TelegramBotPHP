@@ -3,8 +3,8 @@
 ![PHP](https://img.shields.io/badge/php-%3E%3D7.4-8892bf.svg)
 ![CURL](https://img.shields.io/badge/cURL-required-green.svg)
 
-[![Total Downloads](https://poser.pugx.org/parsapooorsh/telegrambotphp/downloads)](https://packagist.org/packages/parsapooorsh/telegrambotphp)
-[![License](https://poser.pugx.org/parsapooorsh/telegrambotphp/license)](https://packagist.org/packages/parsapooorsh/telegrambotphp)
+[![Total Downloads](https://poser.pugx.org/parsapoorsh/telegrambotphp/downloads)](https://packagist.org/packages/parsapooorsh/telegrambotphp)
+[![License](https://poser.pugx.org/parsapoorsh/telegrambotphp/license)](https://packagist.org/packages/parsapooorsh/telegrambotphp)
 [![StyleCI](https://styleci.io/repos/635079074/shield?branch=master)](https://styleci.io/repos/635079074)
 
 A very simple PHP [Telegram Bot API](https://core.telegram.org/bots).    
