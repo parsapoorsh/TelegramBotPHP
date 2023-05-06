@@ -869,21 +869,26 @@ class Telegram
         array $allowed_updates = [],
         bool $drop_pending_updates = false,
         string $secret_token = ''
-    ): array
-    {
+    ): array {
         $requestBody = ['url' => $url];
-        if ($certificate != '')
+        if ($certificate != '') {
             $requestBody['certificate'] = "@$certificate";
-        if ($ip_address != '')
+        }
+        if ($ip_address != '') {
             $requestBody['ip_address'] = $ip_address;
-        if ($max_connections != 0)
+        }
+        if ($max_connections != 0) {
             $requestBody['max_connections'] = $max_connections;
-        if (count($allowed_updates) > 0)
+        }
+        if (count($allowed_updates) > 0) {
             $requestBody['allowed_updates'] = json_encode($allowed_updates);
-        if ($drop_pending_updates)
+        }
+        if ($drop_pending_updates) {
             $requestBody['drop_pending_updates'] = $drop_pending_updates;
-        if ($secret_token != '')
+        }
+        if ($secret_token != '') {
             $requestBody['secret_token'] = $secret_token;
+        }
 
         return $this->endpoint('setWebhook', $requestBody, true);
     }
@@ -907,8 +912,9 @@ class Telegram
             $rawData = file_get_contents('php://input');
 
             return json_decode($rawData, true);
-        } else
+        } else {
             return $this->data;
+        }
     }
 
     public function setData(array $data)
@@ -1287,23 +1293,24 @@ class Telegram
         string $switch_inline_query_current_chat = '',
         string $callback_game = '',
         bool $pay = false
-    ): array
-    {
+    ): array {
         $replyMarkup = [
             'text' => $text,
         ];
-        if ($url != '')
+        if ($url != '') {
             $replyMarkup['url'] = $url;
-        elseif ($callback_data != '')
+        } elseif ($callback_data != '') {
             $replyMarkup['callback_data'] = $callback_data;
-        elseif ($switch_inline_query != '')
+        } elseif ($switch_inline_query != '') {
             $replyMarkup['switch_inline_query'] = $switch_inline_query;
-        elseif ($switch_inline_query_current_chat != '')
+        } elseif ($switch_inline_query_current_chat != '') {
             $replyMarkup['switch_inline_query_current_chat'] = $switch_inline_query_current_chat;
-        elseif ($callback_game != '')
+        } elseif ($callback_game != '') {
             $replyMarkup['callback_game'] = $callback_game;
-        if ($pay)
+        }
+        if ($pay) {
             $replyMarkup['pay'] = $pay;
+        }
 
         return $replyMarkup;
     }
@@ -1805,7 +1812,7 @@ class Telegram
      *
      * @return array the JSON Telegram's reply.
      */
-    public function getForumTopicIconStickers (array $content): array
+    public function getForumTopicIconStickers(array $content): array
     {
         return $this->endpoint('getForumTopicIconStickers ', $content);
     }
@@ -1956,6 +1963,7 @@ class Telegram
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setCustomEmojiStickerSetThumbnail">setCustomEmojiStickerSetThumbnail</a> for the input values.
+     *
      * @param $content array the request parameters as array
      *
      * @return array the JSON Telegram's reply.
@@ -1967,6 +1975,7 @@ class Telegram
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setStickerSetThumbnail">setStickerSetThumbnail</a> for the input values.
+     *
      * @param $content array the request parameters as array
      *
      * @return array the JSON Telegram's reply.
@@ -1978,6 +1987,7 @@ class Telegram
 
     /**
      * See <a href="https://core.telegram.org/bots/api#setStickerSetThumbnail">setStickerSetThumbnail</a> for the input values.
+     *
      * @deprecated Use setStickerSetThumbnail() instead
      *
      * @param $content array the request parameters as array
@@ -2046,42 +2056,60 @@ class Telegram
 
         $update = $this->data;
         $this->update_type = false;
-        if (isset($update['inline_query']))
+        if (isset($update['inline_query'])) {
             $this->update_type = self::INLINE_QUERY;
-        if (isset($update['callback_query']))
+        }
+        if (isset($update['callback_query'])) {
             $this->update_type = self::CALLBACK_QUERY;
-        if (isset($update['edited_message']))
+        }
+        if (isset($update['edited_message'])) {
             $this->update_type = self::EDITED_MESSAGE;
-        if (isset($update['message']['text']))
+        }
+        if (isset($update['message']['text'])) {
             $this->update_type = self::MESSAGE;
-        if (isset($update['message']['photo']))
+        }
+        if (isset($update['message']['photo'])) {
             $this->update_type = self::PHOTO;
-        if (isset($update['message']['video']))
+        }
+        if (isset($update['message']['video'])) {
             $this->update_type = self::VIDEO;
-        if (isset($update['message']['audio']))
+        }
+        if (isset($update['message']['audio'])) {
             $this->update_type = self::AUDIO;
-        if (isset($update['message']['voice']))
+        }
+        if (isset($update['message']['voice'])) {
             $this->update_type = self::VOICE;
-        if (isset($update['message']['contact']))
+        }
+        if (isset($update['message']['contact'])) {
             $this->update_type = self::CONTACT;
-        if (isset($update['message']['location']))
+        }
+        if (isset($update['message']['location'])) {
             $this->update_type = self::LOCATION;
-        if (isset($update['message']['reply_to_message']))
+        }
+        if (isset($update['message']['reply_to_message'])) {
             $this->update_type = self::REPLY;
-        if (isset($update['message']['animation']))
+        }
+        if (isset($update['message']['animation'])) {
             $this->update_type = self::ANIMATION;
-        if (isset($update['message']['sticker']))
+        }
+        if (isset($update['message']['sticker'])) {
             $this->update_type = self::STICKER;
-        if (isset($update['message']['document']))
+        }
+        if (isset($update['message']['document'])) {
             $this->update_type = self::DOCUMENT;
-        if (isset($update['message']['new_chat_member']))
+        }
+        if (isset($update['message']['new_chat_member'])) {
             $this->update_type = self::NEW_CHAT_MEMBER;
-        if (isset($update['message']['left_chat_member']))
+        }
+        if (isset($update['message']['left_chat_member'])) {
             $this->update_type = self::LEFT_CHAT_MEMBER;
-        if (isset($update['my_chat_member']))
+        }
+        if (isset($update['my_chat_member'])) {
             $this->update_type = self::MY_CHAT_MEMBER;
-        if (isset($update['channel_post']))
+        }
+        if (isset($update['channel_post'])) {
             $this->update_type = self::CHANNEL_POST;
+        }
 
         return $this->update_type;
     }
