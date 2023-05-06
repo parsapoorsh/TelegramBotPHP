@@ -677,6 +677,30 @@ class Telegram
     }
 
     /**
+     * See <a href="https://core.telegram.org/bots/api#getMyName">getMyName</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function getMyName(array $content): array
+    {
+        return $this->endpoint('getMyName', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#setMyName">setMyName</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function setMyName(array $content): array
+    {
+        return $this->endpoint('setMyName', $content);
+    }
+
+    /**
      * See <a href="https://core.telegram.org/bots/api#deletemycommands">deleteMyCommands</a> for the input values.
      *
      * @param $content array the request parameters as array
