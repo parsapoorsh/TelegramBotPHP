@@ -629,6 +629,54 @@ class Telegram
     }
 
     /**
+     * See <a href="https://core.telegram.org/bots/api#getMyShortDescription">getMyShortDescription</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function getMyShortDescription(array $content): array
+    {
+        return $this->endpoint('getMyShortDescription', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#setMyShortDescription">setMyShortDescription</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function setMyShortDescription(array $content): array
+    {
+        return $this->endpoint('setMyShortDescription', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#getMyDescription">getMyDescription</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function getMyDescription(array $content): array
+    {
+        return $this->endpoint('getMyDescription', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#setMyDescription">setMyDescription</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function setMyDescription(array $content): array
+    {
+        return $this->endpoint('setMyDescription', $content);
+    }
+
+    /**
      * See <a href="https://core.telegram.org/bots/api#deletemycommands">deleteMyCommands</a> for the input values.
      *
      * @param $content array the request parameters as array
@@ -1787,6 +1835,30 @@ class Telegram
     }
 
     /**
+     * See <a href="https://core.telegram.org/bots/api#setStickerSetTitle">setStickerSetTitle</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function setStickerSetTitle(array $content): array
+    {
+        return $this->endpoint('setStickerSetTitle', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#deleteStickerSet">deleteStickerSet</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function deleteStickerSet(array $content): array
+    {
+        return $this->endpoint('deleteStickerSet', $content);
+    }
+
+    /**
      * See <a href="https://core.telegram.org/bots/api#addstickertoset">addStickerToSet</a> for the input values.
      *
      * @param $content array the request parameters as array
@@ -1823,7 +1895,66 @@ class Telegram
     }
 
     /**
-     * See <a href="https://core.telegram.org/bots/api#setstickersetthumb">setStickerSetThumb</a> for the input values.
+     * See <a href="https://core.telegram.org/bots/api#setStickerEmojiList">setStickerEmojiList</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function setStickerEmojiList(array $content): array
+    {
+        return $this->endpoint('setStickerEmojiList', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#setStickerKeywords">setStickerKeywords</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function setStickerKeywords(array $content): array
+    {
+        return $this->endpoint('setStickerKeywords', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#setStickerMaskPosition">setStickerMaskPosition</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function setStickerMaskPosition(array $content): array
+    {
+        return $this->endpoint('setStickerMaskPosition', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#setCustomEmojiStickerSetThumbnail">setCustomEmojiStickerSetThumbnail</a> for the input values.
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function setCustomEmojiStickerSetThumbnail(array $content): array
+    {
+        return $this->endpoint('setCustomEmojiStickerSetThumbnail', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#setStickerSetThumbnail">setStickerSetThumbnail</a> for the input values.
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function setStickerSetThumbnail(array $content): array
+    {
+        return $this->endpoint('setStickerSetThumbnail', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#setStickerSetThumbnail">setStickerSetThumbnail</a> for the input values.
+     * @deprecated Use setStickerSetThumbnail() instead
      *
      * @param $content array the request parameters as array
      *

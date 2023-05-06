@@ -8,7 +8,7 @@
 [![StyleCI](https://styleci.io/repos/635079074/shield?branch=master)](https://styleci.io/repos/635079074)
 
 A very simple PHP [Telegram Bot API](https://core.telegram.org/bots).    
-Compliant with the December 30, 2022 Telegram Bot API update.
+Compliant with the March 9, 2023 Telegram Bot API update.
 
 Requirements
 ---------
