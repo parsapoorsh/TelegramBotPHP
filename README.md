@@ -3,8 +3,8 @@
 ![PHP](https://img.shields.io/badge/php-%3E%3D7.4-8892bf.svg)
 ![CURL](https://img.shields.io/badge/cURL-required-green.svg)
 
-[![Total Downloads](https://poser.pugx.org/parsapoorsh/telegrambotphp/downloads)](https://packagist.org/packages/parsapooorsh/telegrambotphp)
-[![License](https://poser.pugx.org/parsapoorsh/telegrambotphp/license)](https://packagist.org/packages/parsapooorsh/telegrambotphp)
+[![Total Downloads](https://poser.pugx.org/parsapoorsh/telegrambotphp/downloads)](https://packagist.org/packages/parsapoorsh/telegrambotphp)
+[![License](https://poser.pugx.org/parsapoorsh/telegrambotphp/license)](https://packagist.org/packages/parsapoorsh/telegrambotphp)
 [![StyleCI](https://styleci.io/repos/635079074/shield?branch=master)](https://styleci.io/repos/635079074)
 
 A very simple PHP [Telegram Bot API](https://core.telegram.org/bots).    
@@ -31,23 +31,23 @@ Download
 
 From your project directory, run:
 ```
-composer require parsapooorsh/telegrambotphp
+composer require parsapoorsh/telegrambotphp
 ```
 or
 ```
-php composer.phar require parsapooorsh/telegrambotphp
+php composer.phar require parsapoorsh/telegrambotphp
 ```
 Note: If you don't have Composer you can download it [HERE](https://getcomposer.org/download/).
 
 #### Using release archives
 
-https://github.com/parsapooorsh/TelegramBotPHP/releases
+https://github.com/parsapoorsh/TelegramBotPHP/releases
 
 #### Using Git
 
 From a project directory, run:
 ```
-git clone https://github.com/parsapooorsh/TelegramBotPHP.git
+git clone https://github.com/parsapoorsh/TelegramBotPHP.git
 ```
 
 Installation
@@ -239,7 +239,11 @@ All kinds of contributions are welcome - code, tests, documentation, bug reports
 * Write/Edit the documents.
 * Fix bugs or add new features.
 
+About fork
+------------
+This repo is based on [Eleirbag89/TelegramBotPHP](https://github.com/Eleirbag89/TelegramBotPHP/). I forked it because the main repo hadn't been updated for 10 months while Telegram Bot API had 8 updates during that time.
+
 Contact me
 ------------
 
-You can contact me [via Telegram](https://telegram.me/pparsa) but if you have an issue please [open](https://github.com/parsapooorsh/TelegramBotPHP/issues) one.
+You can contact me [via Telegram](https://telegram.me/pparsa) but if you have an issue please [open](https://github.com/parsapoorsh/TelegramBotPHP/issues) one.
