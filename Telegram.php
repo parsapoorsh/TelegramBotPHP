@@ -1667,6 +1667,66 @@ class Telegram
     }
 
     /**
+     * See <a href="https://core.telegram.org/bots/api#editGeneralForumTopic">editGeneralForumTopic</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function editGeneralForumTopic(array $content): array
+    {
+        return $this->endpoint('editGeneralForumTopic', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#closeGeneralForumTopic">closeGeneralForumTopic</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function closeGeneralForumTopic(array $content): array
+    {
+        return $this->endpoint('closeGeneralForumTopic', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#reopenGeneralForumTopic">reopenGeneralForumTopic</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function reopenGeneralForumTopic(array $content): array
+    {
+        return $this->endpoint('reopenGeneralForumTopic', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#hideGeneralForumTopic">hideGeneralForumTopic</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function hideGeneralForumTopic(array $content): array
+    {
+        return $this->endpoint('hideGeneralForumTopic', $content);
+    }
+
+    /**
+     * See <a href="https://core.telegram.org/bots/api#unhideGeneralForumTopic">unhideGeneralForumTopic</a> for the input values.
+     *
+     * @param $content array the request parameters as array
+     *
+     * @return array the JSON Telegram's reply.
+     */
+    public function unhideGeneralForumTopic(array $content): array
+    {
+        return $this->endpoint('unhideGeneralForumTopic', $content);
+    }
+
+    /**
      * See <a href="https://core.telegram.org/bots/api#getForumTopicIconStickers ">getForumTopicIconStickers </a> for the input values.
      *
      * @param $content array the request parameters as array
