@@ -239,6 +239,10 @@ All kinds of contributions are welcome - code, tests, documentation, bug reports
 * Write/Edit the documents.
 * Fix bugs or add new features.
 
+About fork
+------------
+This repo is based on [Eleirbag89/TelegramBotPHP](https://github.com/Eleirbag89/TelegramBotPHP/). I forked it because the main repo hadn't been updated for 10 months while Telegram Bot API had 8 updates during that time.
+
 Contact me
 ------------
 
