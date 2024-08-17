@@ -96,9 +96,9 @@ class Telegram
     /**
      * Create a Telegram instance from the bot token.
      *
-     * @param $bot_token string the bot token
+     * @param $bot_token  string the bot token
      * @param $log_errors bool enable or disable the logging
-     * @param $proxy array with the proxy configuration (url, port, type, auth)
+     * @param $proxy      array with the proxy configuration (url, port, type, auth)
      *
      * @return void an instance of the class.
      */
@@ -114,9 +114,9 @@ class Telegram
     /**
      * Contacts the various API endpoints.
      *
-     * @param $api string the API endpoint
+     * @param $api     string the API endpoint
      * @param $content array the request parameters as array
-     * @param $post bool tells if $content needs to be sends
+     * @param $post    bool tells if $content needs to be sends
      *
      * @return array the JSON Telegram's reply.
      */
@@ -836,7 +836,7 @@ class Telegram
      *  Use this method to download a file from the Telegram servers.
      *
      * @param $telegram_file_path string File path on Telegram servers
-     * @param $local_file_path string File path where save the file.
+     * @param $local_file_path    string File path where save the file.
      */
     public function downloadFile(string $telegram_file_path, string $local_file_path)
     {
@@ -856,7 +856,7 @@ class Telegram
      *
      * If you'd like to make sure that the Webhook request comes from Telegram, we recommend using a secret path in the URL, e.g. https://www.example.com/<token>. Since nobody else knows your bot token, you can be pretty sure it's us.
      *
-     * @param $url string HTTPS url to send updates to. Use an empty string to remove webhook integration
+     * @param $url         string HTTPS url to send updates to. Use an empty string to remove webhook integration
      * @param $certificate string InputFile Upload your public key certificate so that the root certificate in use can be checked
      *
      * @return array the JSON Telegram's reply.
@@ -1209,7 +1209,7 @@ class Telegram
     }
 
     /**
-     *  @return bool true if the message is from a Group chat, false otherwise.
+     * @return bool true if the message is from a Group chat, false otherwise.
      */
     public function messageFromGroup(): bool
     {
@@ -1217,7 +1217,7 @@ class Telegram
     }
 
     /**
-     *  @return string a String of the contact phone number.
+     * @return string a String of the contact phone number.
      */
     public function getContactPhoneNumber(): string
     {
@@ -1229,7 +1229,7 @@ class Telegram
     }
 
     /**
-     *  @return string a String of the title chat.
+     * @return string a String of the title chat.
      */
     public function messageFromGroupTitle(): string
     {
@@ -1241,9 +1241,9 @@ class Telegram
     }
 
     /** This object represents a custom keyboard with reply options.
-     * @param $options array Array of Array of String; Array of button rows, each represented by an Array of Strings
-     * @param $onetime bool Requests clients to hide the keyboard as soon as it's been used. Defaults to false.
-     * @param $resize bool Requests clients to resize the keyboard vertically for optimal fit (e.g., make the keyboard smaller if there are just two rows of buttons). Defaults to false, in which case the custom keyboard is always of the same height as the app's standard keyboard.
+     * @param $options   array Array of Array of String; Array of button rows, each represented by an Array of Strings
+     * @param $onetime   bool Requests clients to hide the keyboard as soon as it's been used. Defaults to false.
+     * @param $resize    bool Requests clients to resize the keyboard vertically for optimal fit (e.g., make the keyboard smaller if there are just two rows of buttons). Defaults to false, in which case the custom keyboard is always of the same height as the app's standard keyboard.
      * @param $selective bool Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot message is a reply (has reply_to_message_id), sender of the original message.
      *
      * @return string the requested keyboard as Json.
@@ -1275,13 +1275,13 @@ class Telegram
     }
 
     /** This object represents one button of an inline keyboard. You must use exactly one of the optional fields.
-     * @param $text string Array of button rows, each represented by an Array of Strings
-     * @param $url string Optional. HTTP url to be opened when button is pressed
-     * @param $callback_data string Optional. Data to be sent in a callback query to the bot when button is pressed
-     * @param $switch_inline_query string Optional. If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot username and the specified inline query in the input field. Can be empty, in which case just the bot’s username will be inserted.
+     * @param $text                             string Array of button rows, each represented by an Array of Strings
+     * @param $url                              string Optional. HTTP url to be opened when button is pressed
+     * @param $callback_data                    string Optional. Data to be sent in a callback query to the bot when button is pressed
+     * @param $switch_inline_query              string Optional. If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot username and the specified inline query in the input field. Can be empty, in which case just the bot’s username will be inserted.
      * @param $switch_inline_query_current_chat string Optional. Optional. If set, pressing the button will insert the bot username and the specified inline query in the current chat's input field. Can be empty, in which case only the bot’s username will be inserted.
-     * @param $callback_game string Optional. Description of the game that will be launched when the user presses the button.
-     * @param $pay bool Optional. Specify True, to send a <a href="https://core.telegram.org/bots/api#payments">Pay button</a>.
+     * @param $callback_game                    string Optional. Description of the game that will be launched when the user presses the button.
+     * @param $pay                              bool Optional. Specify True, to send a <a href="https://core.telegram.org/bots/api#payments">Pay button</a>.
      *
      * @return array the requested button as Array.
      */
@@ -1316,8 +1316,8 @@ class Telegram
     }
 
     /** This object represents one button of an inline keyboard. You must use exactly one of the optional fields.
-     * @param $text string Array of button rows, each represented by an Array of Strings
-     * @param $request_contact bool Optional. If True, the user's phone number will be sent as a contact when the button is pressed. Available in private chats only
+     * @param $text             string Array of button rows, each represented by an Array of Strings
+     * @param $request_contact  bool Optional. If True, the user's phone number will be sent as a contact when the button is pressed. Available in private chats only
      * @param $request_location bool Optional. If True, the user's current location will be sent when the button is pressed. Available in private chats only
      *
      * @return array the requested button as Array.
@@ -2012,10 +2012,10 @@ class Telegram
     }
 
     /** Use this method to receive incoming updates using long polling.
-     * @param $offset int Identifier of the first update to be returned. Must be greater by one than the highest among the identifiers of previously received updates. By default, updates starting with the earliest unconfirmed update are returned. An update is considered confirmed as soon as getUpdates is called with an offset higher than its update_id.
-     * @param $limit int Limits the number of updates to be retrieved. Values between 1—100 are accepted. Defaults to 100
+     * @param $offset  int Identifier of the first update to be returned. Must be greater by one than the highest among the identifiers of previously received updates. By default, updates starting with the earliest unconfirmed update are returned. An update is considered confirmed as soon as getUpdates is called with an offset higher than its update_id.
+     * @param $limit   int Limits the number of updates to be retrieved. Values between 1—100 are accepted. Defaults to 100
      * @param $timeout int Timeout in seconds for long polling. Defaults to 0, i.e. usual short polling
-     * @param $update bool If true updates the pending message list to the last update received. Default to true.
+     * @param $update  bool If true updates the pending message list to the last update received. Default to true.
      *
      * @return array the updates as Array.
      */
